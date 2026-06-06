@@ -19,7 +19,7 @@
 // Bump the CACHE string below if you ever need to force-clear every cached
 // file at once (e.g. a breaking change to asset filenames). Day-to-day content
 // updates do NOT need a bump thanks to the network-first strategy above.
-const CACHE = 'electrical-quiz-v5';
+const CACHE = 'electrical-quiz-v6';
 
 // Files cached up front when the service worker first installs, so the app
 // works offline immediately after the first visit.
@@ -29,6 +29,7 @@ const INSTALL_FILES = [
   './manifest.json',
   './catalog.json',
   './banks/elec-electrician-capstone-yr1.json',
+  './banks/shooting-marksmanship-mrad-hunting.json',
   './banks/shooting-cartridge-308.json',
   './banks/shooting-cartridge-243.json',
   './banks/shooting-cartridge-65creedmoor.json',

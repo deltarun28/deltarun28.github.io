@@ -26,7 +26,13 @@
       "title": "Shooting",
       "icon": "🎯",
       "categories": [
-        { "id": "marksmanship", "title": "Marksmanship", "quizzes": [] },
+        {
+          "id": "marksmanship",
+          "title": "Marksmanship",
+          "quizzes": [
+            { "id": "shooting-mrad-hunting", "title": "MRAD Hunting", "file": "banks/shooting-marksmanship-mrad-hunting.json", "meta": "135 questions" }
+          ]
+        },
         { "id": "marksmanship-advanced", "title": "Marksmanship Advanced", "quizzes": [] },
         {
           "id": "cartridges",

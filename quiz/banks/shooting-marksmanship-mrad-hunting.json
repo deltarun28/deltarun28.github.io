@@ -1,0 +1,1819 @@
+{
+  "id": "shooting-mrad-hunting",
+  "title": "MRAD Hunting",
+  "source": "MRAD reticle math · deer-sized targets",
+  "pass_mark_percent": 70,
+  "topic_labels": {
+    "reticle_dimensions": "Reticle Dimensions",
+    "accuracy": "Accuracy",
+    "wind_errors": "Wind Errors",
+    "elevation_errors": "Elevation Errors",
+    "ranging": "Ranging",
+    "ethical_shot_assessment": "Ethical Shot Assessment",
+    "spotter_corrections": "Spotter Corrections",
+    "dialing_vs_holding": "Dialing vs Holding",
+    "first_round_hit_probability": "First-Round Hit Probability"
+  },
+  "questions": [
+    {
+      "id": "mrad-001",
+      "number": 1,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.1 mrad at 200 m?",
+      "explanation": "At 200 m, 0.1 mrad equals 0.1 × 200 = 20 mm.",
+      "options": {
+        "a": "60 mm",
+        "b": "20 mm",
+        "c": "15 mm",
+        "d": "30 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-002",
+      "number": 2,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.1 mrad at 300 m?",
+      "explanation": "At 300 m, 0.1 mrad equals 0.1 × 300 = 30 mm.",
+      "options": {
+        "a": "20 mm",
+        "b": "45 mm",
+        "c": "60 mm",
+        "d": "30 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-003",
+      "number": 3,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.1 mrad at 500 m?",
+      "explanation": "At 500 m, 0.1 mrad equals 0.1 × 500 = 50 mm.",
+      "options": {
+        "a": "40 mm",
+        "b": "60 mm",
+        "c": "50 mm",
+        "d": "100 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-004",
+      "number": 4,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.2 mrad at 250 m?",
+      "explanation": "At 250 m, 0.2 mrad equals 0.2 × 250 = 50 mm.",
+      "options": {
+        "a": "60 mm",
+        "b": "50 mm",
+        "c": "10 mm",
+        "d": "40 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-005",
+      "number": 5,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.2 mrad at 400 m?",
+      "explanation": "At 400 m, 0.2 mrad equals 0.2 × 400 = 80 mm.",
+      "options": {
+        "a": "80 mm",
+        "b": "20 mm",
+        "c": "100 mm",
+        "d": "60 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-006",
+      "number": 6,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.2 mrad at 600 m?",
+      "explanation": "At 600 m, 0.2 mrad equals 0.2 × 600 = 120 mm.",
+      "options": {
+        "a": "120 mm",
+        "b": "240 mm",
+        "c": "180 mm",
+        "d": "360 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-007",
+      "number": 7,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.3 mrad at 200 m?",
+      "explanation": "At 200 m, 0.3 mrad equals 0.3 × 200 = 60 mm.",
+      "options": {
+        "a": "75 mm",
+        "b": "120 mm",
+        "c": "60 mm",
+        "d": "45 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-008",
+      "number": 8,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.3 mrad at 300 m?",
+      "explanation": "At 300 m, 0.3 mrad equals 0.3 × 300 = 90 mm.",
+      "options": {
+        "a": "90 mm",
+        "b": "270 mm",
+        "c": "140 mm",
+        "d": "110 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-009",
+      "number": 9,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.3 mrad at 500 m?",
+      "explanation": "At 500 m, 0.3 mrad equals 0.3 × 500 = 150 mm.",
+      "options": {
+        "a": "110 mm",
+        "b": "450 mm",
+        "c": "150 mm",
+        "d": "40 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-010",
+      "number": 10,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.3 mrad at 700 m?",
+      "explanation": "At 700 m, 0.3 mrad equals 0.3 × 700 = 210 mm.",
+      "options": {
+        "a": "100 mm",
+        "b": "50 mm",
+        "c": "260 mm",
+        "d": "210 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-011",
+      "number": 11,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.4 mrad at 250 m?",
+      "explanation": "At 250 m, 0.4 mrad equals 0.4 × 250 = 100 mm.",
+      "options": {
+        "a": "50 mm",
+        "b": "150 mm",
+        "c": "100 mm",
+        "d": "300 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-012",
+      "number": 12,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.4 mrad at 500 m?",
+      "explanation": "At 500 m, 0.4 mrad equals 0.4 × 500 = 200 mm.",
+      "options": {
+        "a": "200 mm",
+        "b": "600 mm",
+        "c": "100 mm",
+        "d": "400 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-013",
+      "number": 13,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.5 mrad at 300 m?",
+      "explanation": "At 300 m, 0.5 mrad equals 0.5 × 300 = 150 mm.",
+      "options": {
+        "a": "150 mm",
+        "b": "220 mm",
+        "c": "75 mm",
+        "d": "300 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-014",
+      "number": 14,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.5 mrad at 400 m?",
+      "explanation": "At 400 m, 0.5 mrad equals 0.5 × 400 = 200 mm.",
+      "options": {
+        "a": "150 mm",
+        "b": "200 mm",
+        "c": "600 mm",
+        "d": "400 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-015",
+      "number": 15,
+      "topic": "reticle_dimensions",
+      "text": "How wide is 0.5 mrad at 800 m?",
+      "explanation": "At 800 m, 0.5 mrad equals 0.5 × 800 = 400 mm.",
+      "options": {
+        "a": "200 mm",
+        "b": "800 mm",
+        "c": "600 mm",
+        "d": "400 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-016",
+      "number": 16,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.3 mrad groups. What is the expected group diameter at 200 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.3 × 200 = 60 mm.",
+      "options": {
+        "a": "90 mm",
+        "b": "45 mm",
+        "c": "60 mm",
+        "d": "30 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-017",
+      "number": 17,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.3 mrad groups. What is the expected group diameter at 300 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.3 × 300 = 90 mm.",
+      "options": {
+        "a": "70 mm",
+        "b": "90 mm",
+        "c": "270 mm",
+        "d": "20 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-018",
+      "number": 18,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.3 mrad groups. What is the expected group diameter at 400 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.3 × 400 = 120 mm.",
+      "options": {
+        "a": "90 mm",
+        "b": "360 mm",
+        "c": "120 mm",
+        "d": "150 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-019",
+      "number": 19,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.3 mrad groups. What is the expected group diameter at 500 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.3 × 500 = 150 mm.",
+      "options": {
+        "a": "110 mm",
+        "b": "450 mm",
+        "c": "190 mm",
+        "d": "150 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-020",
+      "number": 20,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.3 mrad groups. What is the expected group diameter at 600 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.3 × 600 = 180 mm.",
+      "options": {
+        "a": "180 mm",
+        "b": "140 mm",
+        "c": "220 mm",
+        "d": "360 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-021",
+      "number": 21,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.3 mrad groups. What is the expected group diameter at 700 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.3 × 700 = 210 mm.",
+      "options": {
+        "a": "210 mm",
+        "b": "100 mm",
+        "c": "160 mm",
+        "d": "260 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-022",
+      "number": 22,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.2 mrad groups. What is the expected group diameter at 300 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.2 × 300 = 60 mm.",
+      "options": {
+        "a": "180 mm",
+        "b": "60 mm",
+        "c": "45 mm",
+        "d": "120 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-023",
+      "number": 23,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.2 mrad groups. What is the expected group diameter at 500 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.2 × 500 = 100 mm.",
+      "options": {
+        "a": "75 mm",
+        "b": "300 mm",
+        "c": "100 mm",
+        "d": "200 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-024",
+      "number": 24,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.2 mrad groups. What is the expected group diameter at 800 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.2 × 800 = 160 mm.",
+      "options": {
+        "a": "80 mm",
+        "b": "480 mm",
+        "c": "160 mm",
+        "d": "40 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-025",
+      "number": 25,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.4 mrad groups. What is the expected group diameter at 300 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.4 × 300 = 120 mm.",
+      "options": {
+        "a": "120 mm",
+        "b": "150 mm",
+        "c": "240 mm",
+        "d": "360 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-026",
+      "number": 26,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.4 mrad groups. What is the expected group diameter at 500 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.4 × 500 = 200 mm.",
+      "options": {
+        "a": "400 mm",
+        "b": "50 mm",
+        "c": "200 mm",
+        "d": "300 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-027",
+      "number": 27,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.5 mrad groups. What is the expected group diameter at 200 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.5 × 200 = 100 mm.",
+      "options": {
+        "a": "100 mm",
+        "b": "120 mm",
+        "c": "50 mm",
+        "d": "200 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-028",
+      "number": 28,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.5 mrad groups. What is the expected group diameter at 400 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.5 × 400 = 200 mm.",
+      "options": {
+        "a": "50 mm",
+        "b": "400 mm",
+        "c": "600 mm",
+        "d": "200 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-029",
+      "number": 29,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.25 mrad groups. What is the expected group diameter at 400 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.25 × 400 = 100 mm.",
+      "options": {
+        "a": "50 mm",
+        "b": "100 mm",
+        "c": "300 mm",
+        "d": "200 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-030",
+      "number": 30,
+      "topic": "accuracy",
+      "text": "Your rifle shoots 0.35 mrad groups. What is the expected group diameter at 600 m?",
+      "explanation": "Group size in millimetres is mrad × distance. 0.35 × 600 = 210 mm.",
+      "options": {
+        "a": "630 mm",
+        "b": "320 mm",
+        "c": "210 mm",
+        "d": "100 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-031",
+      "number": 31,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.1 mrad at 200 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.1 × 200 = 20 mm.",
+      "options": {
+        "a": "5 mm",
+        "b": "15 mm",
+        "c": "40 mm",
+        "d": "20 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-032",
+      "number": 32,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.1 mrad at 300 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.1 × 300 = 30 mm.",
+      "options": {
+        "a": "60 mm",
+        "b": "20 mm",
+        "c": "30 mm",
+        "d": "40 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-033",
+      "number": 33,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.1 mrad at 500 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.1 × 500 = 50 mm.",
+      "options": {
+        "a": "10 mm",
+        "b": "100 mm",
+        "c": "150 mm",
+        "d": "50 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-034",
+      "number": 34,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.1 mrad at 800 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.1 × 800 = 80 mm.",
+      "options": {
+        "a": "120 mm",
+        "b": "20 mm",
+        "c": "80 mm",
+        "d": "40 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-035",
+      "number": 35,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.2 mrad at 250 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.2 × 250 = 50 mm.",
+      "options": {
+        "a": "25 mm",
+        "b": "60 mm",
+        "c": "150 mm",
+        "d": "50 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-036",
+      "number": 36,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.2 mrad at 400 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.2 × 400 = 80 mm.",
+      "options": {
+        "a": "100 mm",
+        "b": "60 mm",
+        "c": "20 mm",
+        "d": "80 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-037",
+      "number": 37,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.2 mrad at 500 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.2 × 500 = 100 mm.",
+      "options": {
+        "a": "120 mm",
+        "b": "100 mm",
+        "c": "300 mm",
+        "d": "50 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-038",
+      "number": 38,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.2 mrad at 700 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.2 × 700 = 140 mm.",
+      "options": {
+        "a": "180 mm",
+        "b": "140 mm",
+        "c": "35 mm",
+        "d": "100 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-039",
+      "number": 39,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.3 mrad at 300 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.3 × 300 = 90 mm.",
+      "options": {
+        "a": "45 mm",
+        "b": "70 mm",
+        "c": "90 mm",
+        "d": "270 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-040",
+      "number": 40,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.3 mrad at 400 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.3 × 400 = 120 mm.",
+      "options": {
+        "a": "120 mm",
+        "b": "30 mm",
+        "c": "180 mm",
+        "d": "360 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-041",
+      "number": 41,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.3 mrad at 600 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.3 × 600 = 180 mm.",
+      "options": {
+        "a": "45 mm",
+        "b": "90 mm",
+        "c": "360 mm",
+        "d": "180 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-042",
+      "number": 42,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.3 mrad at 900 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.3 × 900 = 270 mm.",
+      "options": {
+        "a": "200 mm",
+        "b": "340 mm",
+        "c": "70 mm",
+        "d": "270 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-043",
+      "number": 43,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.4 mrad at 300 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.4 × 300 = 120 mm.",
+      "options": {
+        "a": "360 mm",
+        "b": "150 mm",
+        "c": "90 mm",
+        "d": "120 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-044",
+      "number": 44,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.4 mrad at 500 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.4 × 500 = 200 mm.",
+      "options": {
+        "a": "150 mm",
+        "b": "400 mm",
+        "c": "200 mm",
+        "d": "100 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-045",
+      "number": 45,
+      "topic": "wind_errors",
+      "text": "You misread the wind by 0.5 mrad at 500 m. How far sideways will the impact be from your intended point of aim?",
+      "explanation": "Wind error in millimetres is mrad error × distance. 0.5 × 500 = 250 mm.",
+      "options": {
+        "a": "120 mm",
+        "b": "750 mm",
+        "c": "60 mm",
+        "d": "250 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-046",
+      "number": 46,
+      "topic": "elevation_errors",
+      "text": "You dial 0.1 mrad too much elevation at 200 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.1 × 200 = 20 mm high.",
+      "options": {
+        "a": "10 mm",
+        "b": "25 mm",
+        "c": "20 mm",
+        "d": "40 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-047",
+      "number": 47,
+      "topic": "elevation_errors",
+      "text": "You dial 0.1 mrad too much elevation at 400 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.1 × 400 = 40 mm high.",
+      "options": {
+        "a": "120 mm",
+        "b": "80 mm",
+        "c": "10 mm",
+        "d": "40 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-048",
+      "number": 48,
+      "topic": "elevation_errors",
+      "text": "You dial 0.1 mrad too much elevation at 600 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.1 × 600 = 60 mm high.",
+      "options": {
+        "a": "30 mm",
+        "b": "90 mm",
+        "c": "60 mm",
+        "d": "15 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-049",
+      "number": 49,
+      "topic": "elevation_errors",
+      "text": "You dial 0.2 mrad too much elevation at 250 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.2 × 250 = 50 mm high.",
+      "options": {
+        "a": "60 mm",
+        "b": "50 mm",
+        "c": "100 mm",
+        "d": "75 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-050",
+      "number": 50,
+      "topic": "elevation_errors",
+      "text": "You dial 0.2 mrad too much elevation at 300 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.2 × 300 = 60 mm high.",
+      "options": {
+        "a": "15 mm",
+        "b": "30 mm",
+        "c": "75 mm",
+        "d": "60 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-051",
+      "number": 51,
+      "topic": "elevation_errors",
+      "text": "You dial 0.2 mrad too much elevation at 500 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.2 × 500 = 100 mm high.",
+      "options": {
+        "a": "120 mm",
+        "b": "300 mm",
+        "c": "150 mm",
+        "d": "100 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-052",
+      "number": 52,
+      "topic": "elevation_errors",
+      "text": "You dial 0.2 mrad too much elevation at 800 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.2 × 800 = 160 mm high.",
+      "options": {
+        "a": "40 mm",
+        "b": "240 mm",
+        "c": "160 mm",
+        "d": "80 mm"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-053",
+      "number": 53,
+      "topic": "elevation_errors",
+      "text": "You dial 0.3 mrad too much elevation at 300 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.3 × 300 = 90 mm high.",
+      "options": {
+        "a": "270 mm",
+        "b": "90 mm",
+        "c": "20 mm",
+        "d": "45 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-054",
+      "number": 54,
+      "topic": "elevation_errors",
+      "text": "You dial 0.3 mrad too much elevation at 400 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.3 × 400 = 120 mm high.",
+      "options": {
+        "a": "60 mm",
+        "b": "120 mm",
+        "c": "30 mm",
+        "d": "180 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-055",
+      "number": 55,
+      "topic": "elevation_errors",
+      "text": "You dial 0.3 mrad too much elevation at 700 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.3 × 700 = 210 mm high.",
+      "options": {
+        "a": "420 mm",
+        "b": "260 mm",
+        "c": "50 mm",
+        "d": "210 mm"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-056",
+      "number": 56,
+      "topic": "elevation_errors",
+      "text": "You dial 0.4 mrad too much elevation at 250 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.4 × 250 = 100 mm high.",
+      "options": {
+        "a": "300 mm",
+        "b": "100 mm",
+        "c": "200 mm",
+        "d": "75 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-057",
+      "number": 57,
+      "topic": "elevation_errors",
+      "text": "You dial 0.4 mrad too much elevation at 500 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.4 × 500 = 200 mm high.",
+      "options": {
+        "a": "250 mm",
+        "b": "200 mm",
+        "c": "100 mm",
+        "d": "400 mm"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-058",
+      "number": 58,
+      "topic": "elevation_errors",
+      "text": "You dial 0.4 mrad too much elevation at 900 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.4 × 900 = 360 mm high.",
+      "options": {
+        "a": "360 mm",
+        "b": "90 mm",
+        "c": "270 mm",
+        "d": "720 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-059",
+      "number": 59,
+      "topic": "elevation_errors",
+      "text": "You dial 0.5 mrad too much elevation at 300 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.5 × 300 = 150 mm high.",
+      "options": {
+        "a": "150 mm",
+        "b": "300 mm",
+        "c": "110 mm",
+        "d": "190 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-060",
+      "number": 60,
+      "topic": "elevation_errors",
+      "text": "You dial 0.5 mrad too much elevation at 600 m. How high will the impact be?",
+      "explanation": "Elevation error in millimetres is mrad error × distance. 0.5 × 600 = 300 mm high.",
+      "options": {
+        "a": "300 mm",
+        "b": "600 mm",
+        "c": "450 mm",
+        "d": "150 mm"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-061",
+      "number": 61,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 200 mm and measures 1 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 200 ÷ 1 = 200 m.",
+      "options": {
+        "a": "200 m",
+        "b": "600 m",
+        "c": "50 m",
+        "d": "100 m"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-062",
+      "number": 62,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 200 mm and measures 0.8 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 200 ÷ 0.8 = 250 m.",
+      "options": {
+        "a": "60 m",
+        "b": "250 m",
+        "c": "190 m",
+        "d": "750 m"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-063",
+      "number": 63,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 200 mm and measures 0.5 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 200 ÷ 0.5 = 400 m.",
+      "options": {
+        "a": "200 m",
+        "b": "800 m",
+        "c": "400 m",
+        "d": "1200 m"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-064",
+      "number": 64,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 200 mm and measures 0.4 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 200 ÷ 0.4 = 500 m.",
+      "options": {
+        "a": "500 m",
+        "b": "250 m",
+        "c": "750 m",
+        "d": "600 m"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-065",
+      "number": 65,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 200 mm and measures 0.3 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 200 ÷ 0.3 = 667 m.",
+      "options": {
+        "a": "667 m",
+        "b": "1000 m",
+        "c": "1350 m",
+        "d": "850 m"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-066",
+      "number": 66,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 150 mm and measures 0.5 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 150 ÷ 0.5 = 300 m.",
+      "options": {
+        "a": "300 m",
+        "b": "400 m",
+        "c": "600 m",
+        "d": "150 m"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-067",
+      "number": 67,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 150 mm and measures 0.3 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 150 ÷ 0.3 = 500 m.",
+      "options": {
+        "a": "750 m",
+        "b": "120 m",
+        "c": "500 m",
+        "d": "1500 m"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-068",
+      "number": 68,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 150 mm and measures 0.25 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 150 ÷ 0.25 = 600 m.",
+      "options": {
+        "a": "900 m",
+        "b": "600 m",
+        "c": "150 m",
+        "d": "1200 m"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-069",
+      "number": 69,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 250 mm and measures 1 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 250 ÷ 1 = 250 m.",
+      "options": {
+        "a": "250 m",
+        "b": "60 m",
+        "c": "750 m",
+        "d": "400 m"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-070",
+      "number": 70,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 250 mm and measures 0.5 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 250 ÷ 0.5 = 500 m.",
+      "options": {
+        "a": "600 m",
+        "b": "750 m",
+        "c": "1500 m",
+        "d": "500 m"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-071",
+      "number": 71,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 300 mm and measures 1 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 300 ÷ 1 = 300 m.",
+      "options": {
+        "a": "450 m",
+        "b": "220 m",
+        "c": "600 m",
+        "d": "300 m"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-072",
+      "number": 72,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 300 mm and measures 0.75 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 300 ÷ 0.75 = 400 m.",
+      "options": {
+        "a": "400 m",
+        "b": "500 m",
+        "c": "1200 m",
+        "d": "800 m"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-073",
+      "number": 73,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 300 mm and measures 0.6 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 300 ÷ 0.6 = 500 m.",
+      "options": {
+        "a": "600 m",
+        "b": "400 m",
+        "c": "1500 m",
+        "d": "500 m"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-074",
+      "number": 74,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 400 mm and measures 1 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 400 ÷ 1 = 400 m.",
+      "options": {
+        "a": "600 m",
+        "b": "100 m",
+        "c": "200 m",
+        "d": "400 m"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-075",
+      "number": 75,
+      "topic": "ranging",
+      "text": "A deer-sized feature is estimated at 400 mm and measures 0.8 mrad in the reticle. Approximately how far away is it?",
+      "explanation": "Distance equals target size in millimetres divided by mrad. 400 ÷ 0.8 = 500 m.",
+      "options": {
+        "a": "500 m",
+        "b": "750 m",
+        "c": "1500 m",
+        "d": "400 m"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-076",
+      "number": 76,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 300 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 300 = 90 mm. Wind uncertainty is 0.1 × 300 = 30 mm. Together this represents about 120 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-077",
+      "number": 77,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 400 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 400 = 120 mm. Wind uncertainty is 0.1 × 400 = 40 mm. Together this represents about 160 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-078",
+      "number": 78,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 500 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 500 = 150 mm. Wind uncertainty is 0.1 × 500 = 50 mm. Together this represents about 200 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-079",
+      "number": 79,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 600 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 600 = 180 mm. Wind uncertainty is 0.1 × 600 = 60 mm. Together this represents about 240 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-080",
+      "number": 80,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 700 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 700 = 210 mm. Wind uncertainty is 0.1 × 700 = 70 mm. Together this represents about 280 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-081",
+      "number": 81,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 150 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 400 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 150 mm. Rifle dispersion is 0.3 × 400 = 120 mm. Wind uncertainty is 0.1 × 400 = 40 mm. Together this represents about 160 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-082",
+      "number": 82,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 150 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 500 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 150 mm. Rifle dispersion is 0.3 × 500 = 150 mm. Wind uncertainty is 0.1 × 500 = 50 mm. Together this represents about 200 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-083",
+      "number": 83,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 250 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.1 mrad at 500 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 250 mm. Rifle dispersion is 0.3 × 500 = 150 mm. Wind uncertainty is 0.1 × 500 = 50 mm. Together this represents about 200 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-084",
+      "number": 84,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.2 mrad at 500 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 500 = 150 mm. Wind uncertainty is 0.2 × 500 = 100 mm. Together this represents about 250 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-085",
+      "number": 85,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.2 mrad at 600 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 600 = 180 mm. Wind uncertainty is 0.2 × 600 = 120 mm. Together this represents about 300 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-086",
+      "number": 86,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.2 mrad at 800 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 800 = 240 mm. Wind uncertainty is 0.2 × 800 = 160 mm. Together this represents about 400 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-087",
+      "number": 87,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.5 mrad and wind uncertainty is ±0.1 mrad at 300 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.5 × 300 = 150 mm. Wind uncertainty is 0.1 × 300 = 30 mm. Together this represents about 180 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-088",
+      "number": 88,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.5 mrad and wind uncertainty is ±0.1 mrad at 400 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.5 × 400 = 200 mm. Wind uncertainty is 0.1 × 400 = 40 mm. Together this represents about 240 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-089",
+      "number": 89,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.2 mrad and wind uncertainty is ±0.1 mrad at 500 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.2 × 500 = 100 mm. Wind uncertainty is 0.1 × 500 = 50 mm. Together this represents about 150 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-090",
+      "number": 90,
+      "topic": "ethical_shot_assessment",
+      "text": "A deer has an assumed 200 mm vital zone. Your rifle shoots 0.3 mrad and wind uncertainty is ±0.3 mrad at 900 m. Is this a high-confidence shot based on these factors?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 0.3 × 900 = 270 mm. Wind uncertainty is 0.3 × 900 = 270 mm. Together this represents about 540 mm of possible error before considering shooter position, animal movement or range error.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-091",
+      "number": 91,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.2 mrad left at 300 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 300 m, 0.2 mrad is 60 mm, but the scope/hold correction remains 0.2 mrad right.",
+      "options": {
+        "a": "0.3 mrad right",
+        "b": "0.2 mrad left",
+        "c": "0.2 mrad up",
+        "d": "0.2 mrad right"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-092",
+      "number": 92,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.3 mrad right at 400 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 400 m, 0.3 mrad is 120 mm, but the scope/hold correction remains 0.3 mrad left.",
+      "options": {
+        "a": "0.3 mrad right",
+        "b": "0.3 mrad left",
+        "c": "0.5 mrad left",
+        "d": "0.3 mrad down"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-093",
+      "number": 93,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.2 mrad low at 500 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 500 m, 0.2 mrad is 100 mm, but the scope/hold correction remains 0.2 mrad up.",
+      "options": {
+        "a": "0.2 mrad up",
+        "b": "0.2 mrad down",
+        "c": "0.2 mrad left",
+        "d": "0.2 mrad right"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-094",
+      "number": 94,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.1 mrad high at 300 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 300 m, 0.1 mrad is 30 mm, but the scope/hold correction remains 0.1 mrad down.",
+      "options": {
+        "a": "0.1 mrad left",
+        "b": "0.2 mrad down",
+        "c": "0.3 mrad down",
+        "d": "0.1 mrad down"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-095",
+      "number": 95,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.4 mrad left at 500 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 500 m, 0.4 mrad is 200 mm, but the scope/hold correction remains 0.4 mrad right.",
+      "options": {
+        "a": "0.4 mrad down",
+        "b": "0.4 mrad right",
+        "c": "0.4 mrad left",
+        "d": "0.6 mrad right"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-096",
+      "number": 96,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.1 mrad right at 600 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 600 m, 0.1 mrad is 60 mm, but the scope/hold correction remains 0.1 mrad left.",
+      "options": {
+        "a": "0.1 mrad left",
+        "b": "0.2 mrad left",
+        "c": "0.1 mrad down",
+        "d": "0.1 mrad up"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-097",
+      "number": 97,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.3 mrad low at 400 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 400 m, 0.3 mrad is 120 mm, but the scope/hold correction remains 0.3 mrad up.",
+      "options": {
+        "a": "0.3 mrad up",
+        "b": "0.3 mrad down",
+        "c": "0.4 mrad up",
+        "d": "0.3 mrad right"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-098",
+      "number": 98,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.2 mrad high at 700 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 700 m, 0.2 mrad is 140 mm, but the scope/hold correction remains 0.2 mrad down.",
+      "options": {
+        "a": "0.1 mrad down",
+        "b": "0.2 mrad down",
+        "c": "0.2 mrad up",
+        "d": "0.3 mrad down"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-099",
+      "number": 99,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.5 mrad left at 300 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 300 m, 0.5 mrad is 150 mm, but the scope/hold correction remains 0.5 mrad right.",
+      "options": {
+        "a": "0.5 mrad right",
+        "b": "0.7 mrad right",
+        "c": "0.4 mrad right",
+        "d": "0.5 mrad left"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-100",
+      "number": 100,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.2 mrad right at 250 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 250 m, 0.2 mrad is 50 mm, but the scope/hold correction remains 0.2 mrad left.",
+      "options": {
+        "a": "0.2 mrad up",
+        "b": "0.2 mrad left",
+        "c": "0.2 mrad down",
+        "d": "0.1 mrad left"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-101",
+      "number": 101,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.1 mrad low at 800 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 800 m, 0.1 mrad is 80 mm, but the scope/hold correction remains 0.1 mrad up.",
+      "options": {
+        "a": "0.1 mrad left",
+        "b": "0.3 mrad up",
+        "c": "0.1 mrad down",
+        "d": "0.1 mrad up"
+      },
+      "answer": "d"
+    },
+    {
+      "id": "mrad-102",
+      "number": 102,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.4 mrad high at 500 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 500 m, 0.4 mrad is 200 mm, but the scope/hold correction remains 0.4 mrad down.",
+      "options": {
+        "a": "0.4 mrad down",
+        "b": "0.4 mrad up",
+        "c": "0.4 mrad left",
+        "d": "0.6 mrad down"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-103",
+      "number": 103,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.3 mrad left at 900 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 900 m, 0.3 mrad is 270 mm, but the scope/hold correction remains 0.3 mrad right.",
+      "options": {
+        "a": "0.3 mrad up",
+        "b": "0.3 mrad down",
+        "c": "0.3 mrad right",
+        "d": "0.3 mrad left"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-104",
+      "number": 104,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.5 mrad right at 400 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 400 m, 0.5 mrad is 200 mm, but the scope/hold correction remains 0.5 mrad left.",
+      "options": {
+        "a": "0.5 mrad up",
+        "b": "0.7 mrad left",
+        "c": "0.5 mrad left",
+        "d": "0.6 mrad left"
+      },
+      "answer": "c"
+    },
+    {
+      "id": "mrad-105",
+      "number": 105,
+      "topic": "spotter_corrections",
+      "text": "Your spotter calls the impact 0.5 mrad low at 600 m. What correction should you apply?",
+      "explanation": "Correct in the opposite direction of the miss. At 600 m, 0.5 mrad is 300 mm, but the scope/hold correction remains 0.5 mrad up.",
+      "options": {
+        "a": "0.5 mrad up",
+        "b": "0.7 mrad up",
+        "c": "0.5 mrad left",
+        "d": "0.4 mrad up"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-106",
+      "number": 106,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 220 m. The required elevation correction is 0.3 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 220 m the correction is 0.3 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Hold",
+        "b": "Dial"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-107",
+      "number": 107,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 280 m. The required elevation correction is 0.5 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 280 m the correction is 0.5 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-108",
+      "number": 108,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 320 m. The required elevation correction is 0.6 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 320 m the correction is 0.6 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-109",
+      "number": 109,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 350 m. The required elevation correction is 0.4 mrad and the animal is moving slowly. Should you dial or hold?",
+      "explanation": "At 350 m the correction is 0.4 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Hold",
+        "b": "Dial"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-110",
+      "number": 110,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 400 m. The required elevation correction is 0.8 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 400 m the correction is 0.8 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-111",
+      "number": 111,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 450 m. The required elevation correction is 1.0 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 450 m the correction is 1.0 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Hold",
+        "b": "Dial"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-112",
+      "number": 112,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 500 m. The required elevation correction is 1.2 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 500 m the correction is 1.2 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Hold",
+        "b": "Dial"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-113",
+      "number": 113,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 300 m. The required elevation correction is 0.2 mrad and the animal is about to move. Should you dial or hold?",
+      "explanation": "At 300 m the correction is 0.2 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-114",
+      "number": 114,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 250 m. The required elevation correction is 0.1 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 250 m the correction is 0.1 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-115",
+      "number": 115,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 600 m. The required elevation correction is 1.5 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 600 m the correction is 1.5 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-116",
+      "number": 116,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 700 m. The required elevation correction is 2.0 mrad and the animal is stationary. Should you dial or hold?",
+      "explanation": "At 700 m the correction is 2.0 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Hold",
+        "b": "Dial"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-117",
+      "number": 117,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 450 m. The required elevation correction is 0.7 mrad and the animal is moving in and out of cover. Should you dial or hold?",
+      "explanation": "At 450 m the correction is 0.7 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-118",
+      "number": 118,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 380 m. The required elevation correction is 0.5 mrad and the animal is feeding calmly. Should you dial or hold?",
+      "explanation": "At 380 m the correction is 0.5 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Hold",
+        "b": "Dial"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-119",
+      "number": 119,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 520 m. The required elevation correction is 1.1 mrad and the animal is standing briefly. Should you dial or hold?",
+      "explanation": "At 520 m the correction is 1.1 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Dial",
+        "b": "Hold"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-120",
+      "number": 120,
+      "topic": "dialing_vs_holding",
+      "text": "A deer is at 800 m. The required elevation correction is 2.5 mrad and the animal is stationary but wind is uncertain. Should you dial or hold?",
+      "explanation": "At 800 m the correction is 2.5 mrad. Dialing is usually better for larger, deliberate corrections when time allows. Holding is usually better for small corrections, fast opportunities, or animals likely to move.",
+      "options": {
+        "a": "Hold",
+        "b": "Dial"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-121",
+      "number": 121,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 300 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 90 mm, wind uncertainty is 30 mm, and elevation/range uncertainty is 30 mm. Combined possible error is about 150 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-122",
+      "number": 122,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 400 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 120 mm, wind uncertainty is 40 mm, and elevation/range uncertainty is 40 mm. Combined possible error is about 200 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-123",
+      "number": 123,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 500 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 150 mm, wind uncertainty is 50 mm, and elevation/range uncertainty is 50 mm. Combined possible error is about 250 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-124",
+      "number": 124,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 600 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 180 mm, wind uncertainty is 60 mm, and elevation/range uncertainty is 60 mm. Combined possible error is about 300 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-125",
+      "number": 125,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 700 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.2 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 210 mm, wind uncertainty is 140 mm, and elevation/range uncertainty is 70 mm. Combined possible error is about 420 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-126",
+      "number": 126,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 800 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.2 mrad, and possible elevation/range error is ±0.2 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 240 mm, wind uncertainty is 160 mm, and elevation/range uncertainty is 160 mm. Combined possible error is about 560 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-127",
+      "number": 127,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 900 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.3 mrad, and possible elevation/range error is ±0.2 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 270 mm, wind uncertainty is 270 mm, and elevation/range uncertainty is 180 mm. Combined possible error is about 720 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-128",
+      "number": 128,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 150 mm vital zone at 400 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 150 mm. Rifle dispersion is 120 mm, wind uncertainty is 40 mm, and elevation/range uncertainty is 40 mm. Combined possible error is about 200 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-129",
+      "number": 129,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 250 mm vital zone at 500 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 250 mm. Rifle dispersion is 150 mm, wind uncertainty is 50 mm, and elevation/range uncertainty is 50 mm. Combined possible error is about 250 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-130",
+      "number": 130,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 500 m. Rifle accuracy is 0.5 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 250 mm, wind uncertainty is 50 mm, and elevation/range uncertainty is 50 mm. Combined possible error is about 350 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-131",
+      "number": 131,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 300 m. Rifle accuracy is 0.5 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 150 mm, wind uncertainty is 30 mm, and elevation/range uncertainty is 30 mm. Combined possible error is about 210 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-132",
+      "number": 132,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 400 m. Rifle accuracy is 0.2 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 80 mm, wind uncertainty is 40 mm, and elevation/range uncertainty is 40 mm. Combined possible error is about 160 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-133",
+      "number": 133,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 600 m. Rifle accuracy is 0.2 mrad, wind uncertainty is ±0.1 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 120 mm, wind uncertainty is 60 mm, and elevation/range uncertainty is 60 mm. Combined possible error is about 240 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    },
+    {
+      "id": "mrad-134",
+      "number": 134,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 1000 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.3 mrad, and possible elevation/range error is ±0.2 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 300 mm, wind uncertainty is 300 mm, and elevation/range uncertainty is 200 mm. Combined possible error is about 800 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a"
+    },
+    {
+      "id": "mrad-135",
+      "number": 135,
+      "topic": "first_round_hit_probability",
+      "text": "A deer has an assumed 200 mm vital zone at 450 m. Rifle accuracy is 0.3 mrad, wind uncertainty is ±0.2 mrad, and possible elevation/range error is ±0.1 mrad. Is a first-round vital-zone hit highly probable?",
+      "explanation": "The assumed vital zone is 200 mm. Rifle dispersion is 135 mm, wind uncertainty is 90 mm, and elevation/range uncertainty is 45 mm. Combined possible error is about 270 mm, before accounting for shooter position, animal movement or stress.",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b"
+    }
+  ]
+}
