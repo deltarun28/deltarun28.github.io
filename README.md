@@ -9,6 +9,7 @@ A small collection of **Progressive Web Apps (PWAs)** — web apps you can insta
 | App | Link |
 |-----|------|
 | Study Quiz — practice quizzes across trades and topics | https://deltarun28.github.io/quiz/home.html |
+| Iron Vale — real-time territory strategy game | https://deltarun28.github.io/iron-vale/ |
 
 ## Install on your phone
 
