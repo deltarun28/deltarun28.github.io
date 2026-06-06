@@ -918,12 +918,12 @@
       "text": "A deer-sized feature is estimated at 200 mm and measures 0.3 mrad in the reticle. Approximately how far away is it?",
       "explanation": "Distance equals target size in millimetres divided by mrad. 200 ÷ 0.3 = 667 m.",
       "options": {
-        "a": "667 m",
-        "b": "1000 m",
-        "c": "1350 m",
-        "d": "850 m"
+        "a": "1000 m",
+        "b": "667 m",
+        "c": "500 m",
+        "d": "833 m"
       },
-      "answer": "a"
+      "answer": "b"
     },
     {
       "id": "mrad-066",
