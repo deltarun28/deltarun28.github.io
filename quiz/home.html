@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Study Quiz">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>Study Quiz</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
+      --text: #f1f5f9; --subtext: #94a3b8; --primary: #3b82f6;
+      --warn: #f59e0b; --correct: #22c55e;
+    }
+    html { height: 100%; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      height: 100%; overflow-y: auto; overscroll-behavior: none;
+      -webkit-tap-highlight-color: transparent;
+      display: flex; justify-content: center;
+      padding:
+        max(16px, env(safe-area-inset-top))
+        max(16px, env(safe-area-inset-right))
+        max(40px, calc(16px + env(safe-area-inset-bottom)))
+        max(16px, env(safe-area-inset-left));
+    }
+    .app { width: 100%; max-width: 620px; user-select: none; }
+    .hdr { padding: 20px 0 14px; }
+    .hdr-title { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+    .hdr-sub   { font-size: 0.8rem; color: var(--subtext); margin-top: 4px; }
+    .back {
+      display: inline-block; color: var(--primary); text-decoration: none;
+      font-size: 0.85rem; font-weight: 600; padding: 4px 0 14px; touch-action: manipulation;
+    }
+    .section-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--subtext); font-weight: 600; margin-bottom: 12px;
+    }
+    .quiz-card {
+      display: flex; align-items: center; justify-content: space-between;
+      background: var(--surface); border-radius: 14px; padding: 18px 20px;
+      margin-bottom: 10px; text-decoration: none; color: var(--text);
+      transition: background 0.12s; touch-action: manipulation;
+    }
+    .quiz-card:hover { background: var(--surface2); }
+    .quiz-card.disabled { opacity: 0.55; cursor: default; }
+    .quiz-card.disabled:hover { background: var(--surface); }
+    .quiz-title { font-weight: 600; font-size: 1rem; }
+    .quiz-meta  { font-size: 0.78rem; color: var(--subtext); margin-top: 3px; }
+    .quiz-meta.soon { color: var(--warn); }
+    .quiz-meta.done { color: var(--correct); }
+    .arrow { color: var(--primary); font-size: 1.3rem; }
+    .empty-row {
+      background: var(--surface); border-radius: 14px; padding: 18px 20px;
+      color: var(--subtext); font-size: 0.9rem; margin-bottom: 10px;
+    }
+    .note { font-size: 0.72rem; color: var(--subtext); text-align: center; padding: 20px 0 6px; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="hdr">
+    <div class="hdr-title" id="hdr-title">⚡ Study Quiz</div>
+    <div class="hdr-sub" id="hdr-sub">Loading…</div>
+  </div>
+
+  <div id="crumb"></div>
+  <div class="section-label" id="section-label"></div>
+  <div id="list"></div>
+
+  <div class="note">Progress saved on this device</div>
+</div>
+
+<script>
+'use strict';
+
+// Same localStorage key the quiz engine uses, so we can show per-quiz progress.
+// Shape: { "<quizId>": { "<questionId>": { times_asked, times_correct, ... } } }
+const STORAGE_KEY = 'quizapp_progress';
+
+// The full Industry → Category → Quiz tree, loaded once from catalog.json.
+let catalog = null;
+
+// Reads the shared progress store; returns {} if missing or corrupt.
+function readStore() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (_) {
+    return {};
+  }
+}
+
+// Small DOM helper: create an element with an optional class and text.
+function el(tag, cls, txt) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (txt != null) e.textContent = txt;
+  return e;
+}
+
+// The current location in the tree, derived from the URL hash:
+//   #                       → industries
+//   #electrical             → categories of Electrical
+//   #electrical/electrician → quizzes in that category
+// Using the hash means the device back button and a page refresh both work.
+function parseHash() {
+  const h = location.hash.replace(/^#/, '');
+  return h ? h.split('/').filter(Boolean) : [];
+}
+
+function countQuizzes(ind) {
+  return ind.categories.reduce((n, c) => n + c.quizzes.length, 0);
+}
+
+// Builds a tappable card that navigates somewhere (an industry, category, or quiz).
+function navCard(title, meta, href, metaClass) {
+  const a = el('a', 'quiz-card');
+  a.href = href;
+  const left = el('div');
+  left.appendChild(el('div', 'quiz-title', title));
+  if (meta) left.appendChild(el('div', 'quiz-meta' + (metaClass ? ' ' + metaClass : ''), meta));
+  a.appendChild(left);
+  a.appendChild(el('span', 'arrow', '›'));
+  return a;
+}
+
+// Builds a non-tappable, dimmed card (used for quizzes with no questions yet).
+function disabledCard(title, meta) {
+  const div = el('div', 'quiz-card disabled');
+  const left = el('div');
+  left.appendChild(el('div', 'quiz-title', title));
+  if (meta) left.appendChild(el('div', 'quiz-meta soon', meta));
+  div.appendChild(left);
+  return div;
+}
+
+function emptyRow(text) {
+  return el('div', 'empty-row', text);
+}
+
+function setBack(text, href) {
+  const crumb = document.getElementById('crumb');
+  crumb.innerHTML = '';
+  const a = el('a', 'back', text);
+  a.href = href;
+  crumb.appendChild(a);
+}
+
+// Builds a quiz card. Fetches the bank to get the real question count, so we
+// can show accurate progress and disable empty (placeholder) quizzes.
+async function quizCard(qz, store) {
+  let total = null;
+  try {
+    const bank = await fetch(qz.file).then(r => r.json());
+    total = bank.questions.length;
+  } catch (_) { /* fall back to the catalog meta string below */ }
+
+  if (total === 0) {
+    return disabledCard(qz.title, qz.meta || 'Coming soon');
+  }
+
+  // Per-quiz progress from localStorage.
+  const hist  = store[qz.id] || {};
+  const vals  = Object.values(hist);
+  const seen  = vals.filter(h => h.times_asked > 0).length;
+  const asked = vals.reduce((s, h) => s + (h.times_asked   || 0), 0);
+  const right = vals.reduce((s, h) => s + (h.times_correct || 0), 0);
+  const pct   = asked ? Math.round((right / asked) * 100) : 0;
+
+  let meta, cls = '';
+  if (total == null) {
+    meta = qz.meta || '';
+  } else if (seen) {
+    meta = seen + '/' + total + ' seen · ' + pct + '% correct';
+    cls = 'done';
+  } else {
+    meta = total + ' questions · not started';
+  }
+  return navCard(qz.title, meta, 'index.html?quiz=' + encodeURIComponent(qz.id), cls);
+}
+
+// Renders whichever level the hash points at. Re-run on every hash change.
+async function render() {
+  const [indId, catId] = parseHash();
+  const list  = document.getElementById('list');
+  const label = document.getElementById('section-label');
+  const sub   = document.getElementById('hdr-sub');
+  document.getElementById('crumb').innerHTML = '';
+  list.innerHTML = '';
+  window.scrollTo(0, 0);
+
+  // ── Level 1: Industries ──
+  if (!indId) {
+    label.textContent = 'Industries';
+    sub.textContent   = 'Choose an industry';
+    for (const ind of catalog.industries) {
+      list.appendChild(navCard(
+        (ind.icon ? ind.icon + ' ' : '') + ind.title,
+        countQuizzes(ind) + ' quizzes',
+        '#' + ind.id
+      ));
+    }
+    return;
+  }
+
+  const ind = catalog.industries.find(i => i.id === indId);
+  if (!ind) { location.hash = ''; return; }
+
+  // ── Level 2: Categories ──
+  if (!catId) {
+    setBack('‹ Industries', '#');
+    label.textContent = ind.title;
+    sub.textContent   = ind.title;
+    if (!ind.categories.length) { list.appendChild(emptyRow('Nothing here yet.')); return; }
+    for (const cat of ind.categories) {
+      list.appendChild(navCard(
+        cat.title,
+        cat.quizzes.length + (cat.quizzes.length === 1 ? ' quiz' : ' quizzes'),
+        '#' + ind.id + '/' + cat.id
+      ));
+    }
+    return;
+  }
+
+  // ── Level 3: Quizzes ──
+  const cat = ind.categories.find(c => c.id === catId);
+  if (!cat) { location.hash = '#' + ind.id; return; }
+
+  setBack('‹ ' + ind.title, '#' + ind.id);
+  label.textContent = ind.title + ' › ' + cat.title;
+  sub.textContent   = cat.title;
+  if (!cat.quizzes.length) { list.appendChild(emptyRow('No quizzes yet.')); return; }
+
+  const store = readStore();
+  // Render placeholders immediately, then fill in each card as its bank loads,
+  // preserving order.
+  const slots = cat.quizzes.map(() => { const s = el('div'); list.appendChild(s); return s; });
+  cat.quizzes.forEach(async (qz, i) => {
+    const card = await quizCard(qz, store);
+    slots[i].replaceWith(card);
+  });
+}
+
+// ── Boot ──
+async function boot() {
+  try {
+    catalog = await fetch('catalog.json').then(r => r.json());
+  } catch (_) {
+    document.getElementById('hdr-sub').textContent = 'Could not load quizzes.';
+    document.getElementById('list').appendChild(emptyRow('Check your connection and reload.'));
+    return;
+  }
+  window.addEventListener('hashchange', render);
+  render();
+}
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+boot();
+</script>
+</body>
+</html>

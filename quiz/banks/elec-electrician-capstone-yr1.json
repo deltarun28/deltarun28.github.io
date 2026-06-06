@@ -1,0 +1,1334 @@
+{
+  "id": "elec-electrician-capstone-yr1",
+  "title": "Year 1 Capstone 2025 Q3",
+  "source": "US 32619 v1",
+  "pass_mark_percent": 60,
+  "topic_labels": {
+    "electrical_safety": "Electrical Safety",
+    "legislation": "Legislation",
+    "tools": "Tools",
+    "plans": "Plans",
+    "cables": "Cables",
+    "testing": "Testing",
+    "protection_devices": "Protection Devices",
+    "circuit_theory": "Circuit Theory",
+    "mathematics": "Mathematics"
+  },
+  "questions": [
+    {
+      "id": "32619-set-a-q1",
+      "number": 1,
+      "topic": "electrical_safety",
+      "text": "According to the IEC body current chart (current on x-axis in mA, duration on y-axis in ms, zones labelled AC-1 through AC-4), what would be the category of electric shock if someone received a shock of 500 mA for 200 ms?",
+      "context": "On the IEC chart, 500 mA for 200 ms plots into zone AC-4, specifically AC-4.1 — the entry zone where ventricular fibrillation becomes likely.",
+      "image": "images/set-a-022.png",
+      "options": {
+        "a": "AC-3",
+        "b": "AC-4.1",
+        "c": "AC-4.2",
+        "d": "AC-4.3"
+      },
+      "answer": "b",
+      "explanation": "500 mA for 200 ms falls in zone AC-4.1. AC-3 is the 'no organ damage' zone, AC-4.1 is where ventricular fibrillation probability is less than 5%, AC-4.2 up to 50%, AC-4.3 above 50%."
+    },
+    {
+      "id": "32619-set-a-q2",
+      "number": 2,
+      "topic": "electrical_safety",
+      "text": "When using a ladder, what precaution could you take to reduce the risk of electric shock?",
+      "options": {
+        "a": "Use low voltage gloves",
+        "b": "Wear safety shoes",
+        "c": "Use a non-conductive ladder",
+        "d": "All the above"
+      },
+      "answer": "c",
+      "explanation": "A non-conductive (fibreglass) ladder breaks the path to earth. Low voltage gloves and safety shoes alone don't make the ladder itself safe. 'All the above' is wrong because low voltage gloves and safety shoes are not sufficient on their own."
+    },
+    {
+      "id": "32619-set-a-q3",
+      "number": 3,
+      "topic": "legislation",
+      "text": "Your trainee licence is issued by the EWRB when you are training as an electrician. How long does it last for?",
+      "options": {
+        "a": "Up to 10 years",
+        "b": "Up to 3 years",
+        "c": "Up to 4 years",
+        "d": "They have no end date"
+      },
+      "answer": "c",
+      "explanation": "An EWRB trainee licence lasts up to 4 years, reflecting the typical length of a full electrical apprenticeship."
+    },
+    {
+      "id": "32619-set-a-q4",
+      "number": 4,
+      "topic": "legislation",
+      "text": "Before carrying out any prescribed electrical work as a trainee, you should understand:",
+      "options": {
+        "a": "Who your supervisor is",
+        "b": "The limits of the prescribed electrical work that you can do",
+        "c": "The supervisor's instructions on how the prescribed electrical work is to be carried out",
+        "d": "All of the above"
+      },
+      "answer": "d",
+      "explanation": "All three apply — you must know your supervisor, understand your scope, and follow their instructions. This is a legal requirement under the EWRB Supervision Procedures for Trainees."
+    },
+    {
+      "id": "32619-set-a-q5",
+      "number": 5,
+      "topic": "electrical_safety",
+      "text": "A low voltage supply has been isolated, locked out and tagged. What is this an example of?",
+      "options": {
+        "a": "Minimising a hazard",
+        "b": "Eliminating a hazard",
+        "c": "Controlling a hazard"
+      },
+      "answer": "c",
+      "explanation": "Isolation, lockout and tag is hazard control — you are controlling access to the hazard. Elimination would mean removing the hazard entirely (e.g. cutting the cable). Minimising reduces exposure but doesn't prevent access."
+    },
+    {
+      "id": "32619-set-a-q6",
+      "number": 6,
+      "topic": "electrical_safety",
+      "text": "On most job sites you will start the day off with a toolbox or tailgate talk. Identify which of the following should NOT be part of the discussion.",
+      "options": {
+        "a": "Ongoing safety issues",
+        "b": "Changes in procedure",
+        "c": "Pay increase",
+        "d": "Introduction of new staff"
+      },
+      "answer": "c",
+      "explanation": "Toolbox talks cover safety, procedures, and team matters. Pay is a separate HR/employment matter and has no place in a safety briefing."
+    },
+    {
+      "id": "32619-set-a-q7",
+      "number": 7,
+      "topic": "electrical_safety",
+      "text": "Select the item of PPE that would be in regular use when soldering.",
+      "options": {
+        "a": "Earmuffs",
+        "b": "Rubber gauntlets",
+        "c": "Gas detector",
+        "d": "Safety glasses"
+      },
+      "answer": "d",
+      "explanation": "Safety glasses protect against solder splatter and flux splash near the eyes. Earmuffs are for noise, rubber gauntlets for high voltage, gas detectors for confined spaces — none are standard for soldering. Flux fumes are a respiratory hazard (ventilation or a mask addresses those)."
+    },
+    {
+      "id": "32619-set-a-q8",
+      "number": 8,
+      "topic": "electrical_safety",
+      "text": "Which of the following best describes a fire cell?",
+      "options": {
+        "a": "A system designed to safely spread a fire to designated parts of the building",
+        "b": "An area of the building designed to withstand fire for a definite period of time and reduce the spread of fire",
+        "c": "An area of the building designed to contain a fire indefinitely",
+        "d": "An area of the building that contains an automatic sprinkler system"
+      },
+      "answer": "b",
+      "explanation": "A fire cell is a compartment with fire-rated walls/floors designed to contain fire for a rated time period, slowing its spread. It does not contain fire indefinitely and is not defined by sprinklers."
+    },
+    {
+      "id": "32619-set-a-q9",
+      "number": 9,
+      "topic": "electrical_safety",
+      "text": "You and a mechanical engineer have placed your padlocks on an isolation device. He has gone home sick, and you need to restore power to the pump you were both working on. Who can remove the mechanical engineer's lockout?",
+      "options": {
+        "a": "You",
+        "b": "The property owner",
+        "c": "The mechanical engineer",
+        "d": "Any worker on site"
+      },
+      "answer": "c",
+      "explanation": "Only the person who placed the lock can remove it — in this case, the mechanical engineer. If genuinely necessary to remove someone else's lock, there are specific documented procedures involving management, but no one else can simply remove another person's lock."
+    },
+    {
+      "id": "32619-set-a-q10",
+      "number": 10,
+      "topic": "tools",
+      "text": "Identify the tool shown below.",
+      "context": "The image shows side cutters (also called diagonal cutting pliers or dikes) — recognisable by the angled cutting face at the front rather than at the tip.",
+      "image": "images/set-a-024.png",
+      "options": {
+        "a": "Long-nose pliers",
+        "b": "Blunt nose pliers",
+        "c": "Side cutters",
+        "d": "Bull pliers"
+      },
+      "answer": "c",
+      "explanation": "Side cutters have a cutting edge on the side of the jaw, used for cutting wire close to a surface. Long-nose pliers have a tapered gripping jaw, bull pliers are heavier-duty linesman pliers."
+    },
+    {
+      "id": "32619-set-a-q11",
+      "number": 11,
+      "topic": "tools",
+      "text": "Which of the following power tools requires the user to ensure that they wear eye protection, fireproof and non-synthetic clothing?",
+      "options": {
+        "a": "Circular saw",
+        "b": "Angle grinder",
+        "c": "Reciprocating saw",
+        "d": "Oscillating saw"
+      },
+      "answer": "b",
+      "explanation": "An angle grinder throws sparks and metal fragments at high speed. Fireproof, non-synthetic clothing is required because sparks can melt synthetic fibres and cause burns. Other saws produce chips and dust but not sparks requiring fireproof clothing."
+    },
+    {
+      "id": "32619-set-a-q12",
+      "number": 12,
+      "topic": "tools",
+      "text": "Which of the following should you check before using a corded electric drill?",
+      "options": {
+        "a": "Check that it has a current test tag",
+        "b": "Check that it is the latest model",
+        "c": "Check that the blade cover is secure",
+        "d": "Check that it is an employer preferred brand"
+      },
+      "answer": "a",
+      "explanation": "A current test tag confirms the tool has been recently inspected and is electrically safe. Model age and brand are irrelevant to safety. A drill doesn't have a blade cover (that would be a circular saw)."
+    },
+    {
+      "id": "32619-set-a-q13",
+      "number": 13,
+      "topic": "tools",
+      "text": "Identify the accessory shown.",
+      "context": "The image shows a ceiling rose — the round white fitting screwed to the ceiling that the lamp flex hangs from.",
+      "image": "images/set-a-023.png",
+      "options": {
+        "a": "Cord grip lamp holder",
+        "b": "Batten holder",
+        "c": "Junction box",
+        "d": "Ceiling rose"
+      },
+      "answer": "d",
+      "explanation": "A ceiling rose is the fitting mounted on the ceiling that houses the supply connection and from which the lamp flex is suspended. A batten holder mounts directly without a flex. A cord grip lamp holder is at the bottom of the flex."
+    },
+    {
+      "id": "32619-set-a-q14",
+      "number": 14,
+      "topic": "plans",
+      "text": "What is the function of a scale used on a plan?",
+      "options": {
+        "a": "It allows a large area to be represented on a relatively small area of paper or screen",
+        "b": "It gives the reader extra information such as environmental conditions",
+        "c": "It identifies what the symbols on the plan represent",
+        "d": "It informs the reader how the plan is to be implemented"
+      },
+      "answer": "a",
+      "explanation": "A scale (e.g. 1:100) allows real dimensions to be drawn proportionally on a small sheet. The legend identifies symbols. Environmental conditions and implementation instructions are shown elsewhere."
+    },
+    {
+      "id": "32619-set-a-q15",
+      "number": 15,
+      "topic": "circuit_theory",
+      "text": "Which of the following best describes a 'make' contact?",
+      "options": {
+        "a": "Normally closed contacts that open when operated",
+        "b": "Normally open contacts that close when operated",
+        "c": "How contacts sit when the circuit is de-energised",
+        "d": "A contact that has both a normally open contact and a normally closed side"
+      },
+      "answer": "b",
+      "explanation": "A 'make' contact is normally open (NO) — it makes (closes) the circuit when operated. A 'break' contact is normally closed (NC) — it breaks the circuit when operated."
+    },
+    {
+      "id": "32619-set-a-q16",
+      "number": 16,
+      "topic": "cables",
+      "text": "What does the second number of an IP rating tell you?",
+      "options": {
+        "a": "Level of protection against water",
+        "b": "Level of protection against solid objects",
+        "c": "Level of protection against gases",
+        "d": "Level of protection against electric shock"
+      },
+      "answer": "a",
+      "explanation": "IP ratings have two digits: the first indicates protection against solid objects (0–6), the second indicates protection against water ingress (0–8). For example IP54 = dust protected, splash proof."
+    },
+    {
+      "id": "32619-set-a-q17",
+      "number": 17,
+      "topic": "cables",
+      "text": "Why are secure, well-made cable terminations and connections important?",
+      "options": {
+        "a": "If they are not, the connection may become low resistance and cause an arc fault",
+        "b": "If they are not, the connection may become short circuited and cause an arc fault",
+        "c": "If they are not, the connection may become zero resistance and cause an arc fault",
+        "d": "If they are not, the connection may become high resistance and cause an arc fault"
+      },
+      "answer": "d",
+      "explanation": "A loose or poor connection creates high resistance at that point. High resistance causes heating (P=I²R), which can lead to arcing, fire, and failure. Not low resistance — that would actually be a better connection."
+    },
+    {
+      "id": "32619-set-a-q18",
+      "number": 18,
+      "topic": "legislation",
+      "text": "Which of the following are employees responsible for, under the Health and Safety at Work Act (2015)?",
+      "options": {
+        "a": "Maintaining a health and safety register to report all hazards and incidents to their employers",
+        "b": "Taking reasonable care that their actions do not threaten the health and safety of others",
+        "c": "Addressing only those health and safety risks that are new or have arisen since they began employment",
+        "d": "Eliminating all safety risks from the workplace"
+      },
+      "answer": "b",
+      "explanation": "Under HSWA 2015, employees must take reasonable care for themselves and others. Maintaining registers is a PCBU/employer duty. Eliminating all risk is impossible. Employees must address all risks, not just new ones."
+    },
+    {
+      "id": "32619-set-a-q19",
+      "number": 19,
+      "topic": "cables",
+      "text": "If a cable run goes through thermal insulation for at least 200mm, what would happen to its current carrying capacity?",
+      "options": {
+        "a": "It will decrease",
+        "b": "It will stay the same",
+        "c": "It will increase"
+      },
+      "answer": "a",
+      "explanation": "Thermal insulation traps the heat generated by the cable, raising its temperature. Higher temperature = higher resistance = reduced current-carrying capacity. A derating factor must be applied."
+    },
+    {
+      "id": "32619-set-a-q20",
+      "number": 20,
+      "topic": "testing",
+      "text": "A 500 metre cable has an insulation resistance of 500 MΩ. What would the insulation resistance of the cable be if it were shortened to 100 metres?",
+      "options": {
+        "a": "250 MΩ",
+        "b": "500 MΩ",
+        "c": "1500 MΩ",
+        "d": "2500 MΩ"
+      },
+      "answer": "d",
+      "explanation": "Insulation resistance is inversely proportional to cable length (R2 = l1×R1/l2). Shorter cable = higher insulation resistance. 500m → 100m is 1/5 the length, so IR = 500 × 5 = 2500 MΩ."
+    },
+    {
+      "id": "32619-set-a-q21",
+      "number": 21,
+      "topic": "testing",
+      "text": "What is the maximum resistance permitted when carrying out the earth continuity test on a class 1 appliance?",
+      "options": {
+        "a": "1 Ω",
+        "b": "0.5 Ω",
+        "c": "10 Ω",
+        "d": "100 Ω"
+      },
+      "answer": "a",
+      "explanation": "AS/NZS 3760 specifies a maximum earth continuity resistance of 1 Ω for class 1 appliances. This ensures a low-impedance fault path so the protective device will operate quickly."
+    },
+    {
+      "id": "32619-set-a-q22",
+      "number": 22,
+      "topic": "testing",
+      "text": "Which type of meter would you use to confirm isolation of a circuit?",
+      "options": {
+        "a": "Ohmmeter",
+        "b": "Ammeter",
+        "c": "Voltmeter",
+        "d": "Wattmeter"
+      },
+      "answer": "c",
+      "explanation": "A voltmeter confirms isolation by showing zero volts on the isolated circuit. An ohmmeter measures resistance (used on de-energised circuits). An ammeter measures current. A wattmeter measures power."
+    },
+    {
+      "id": "32619-set-a-q23",
+      "number": 23,
+      "topic": "protection_devices",
+      "text": "Why will an RCD trip when there is a leakage to earth from the phase conductor?",
+      "options": {
+        "a": "The current in the neutral conductor passing through the RCD will be greater than the current in the phase conductor",
+        "b": "The current in the neutral conductor passing through the RCD will be less than the current in the phase conductor",
+        "c": "The current in the neutral conductor passing through the RCD will be the same as the current in the phase conductor"
+      },
+      "answer": "b",
+      "explanation": "An RCD monitors the balance between phase and neutral currents. In a healthy circuit they are equal. When current leaks to earth, less returns through the neutral — the neutral current becomes less than the phase current. This imbalance triggers the trip."
+    },
+    {
+      "id": "32619-set-a-q24",
+      "number": 24,
+      "topic": "protection_devices",
+      "text": "Which of the following devices contains both a magnetic coil and a bi-metal strip?",
+      "options": {
+        "a": "MCB",
+        "b": "RCD",
+        "c": "Overload relay",
+        "d": "Fuse"
+      },
+      "answer": "a",
+      "explanation": "An MCB (Miniature Circuit Breaker) uses both: the bi-metal strip for thermal (overload) protection and the magnetic coil for instantaneous (short circuit) protection. An RCD uses a toroidal transformer. A fuse uses a fusible element only."
+    },
+    {
+      "id": "32619-set-a-q25",
+      "number": 25,
+      "topic": "protection_devices",
+      "text": "What is meant by the term 'inverse time-current characteristics', in relation to protective devices?",
+      "options": {
+        "a": "The higher the current, the longer it takes for the protection device to operate",
+        "b": "More current is needed to operate the device",
+        "c": "As the current increases through the protection device, the time taken to operate decreases",
+        "d": "Less current is required to operate protective devices"
+      },
+      "answer": "c",
+      "explanation": "Inverse time-current means the operating time is inversely proportional to current: a small overload takes longer to trip, a large overcurrent trips almost instantly. This is why option A is wrong — higher current = FASTER trip, not slower."
+    },
+    {
+      "id": "32619-set-a-q26",
+      "number": 26,
+      "topic": "circuit_theory",
+      "text": "Ammeters should always be connected in:",
+      "options": {
+        "a": "Parallel with the load",
+        "b": "Series-parallel with the load",
+        "c": "Series with the load",
+        "d": "Doesn't matter, as long as it is connected across the load"
+      },
+      "answer": "c",
+      "explanation": "An ammeter must be in series with the load so all current flows through it. It has very low internal resistance. A voltmeter is connected in parallel. Connecting an ammeter in parallel would cause a short circuit."
+    },
+    {
+      "id": "32619-set-a-q27",
+      "number": 27,
+      "topic": "mathematics",
+      "text": "Calculate the length of side B of a right-angled triangle given: A = 20 (one short side), C = 50 (hypotenuse). Use Pythagoras: B² = C² - A².",
+      "context": "Right-angled triangle with A (vertical side) = 20, C (hypotenuse) = 50, find B (horizontal base). B² = 50² - 20² = 2500 - 400 = 2100. B = √2100 = 45.83",
+      "options": {
+        "a": "22.36",
+        "b": "38.56",
+        "c": "45.83",
+        "d": "55.32"
+      },
+      "answer": "c",
+      "explanation": "B² = C² - A² = 50² - 20² = 2500 - 400 = 2100. B = √2100 = 45.83."
+    },
+    {
+      "id": "32619-set-a-q28",
+      "number": 28,
+      "topic": "mathematics",
+      "text": "For the right-angled triangle below, calculate the length of the side marked 'x'. (hypotenuse = 8, base angle = 30°, x is the vertical side opposite the 30° angle.)",
+      "context": "sin(30°) = opposite/hypotenuse = x/8. x = 8 × sin(30°) = 8 × 0.5 = 4.",
+      "image": "images/set-a-025.png",
+      "options": {
+        "a": "3",
+        "b": "4",
+        "c": "5",
+        "d": "6"
+      },
+      "answer": "b",
+      "explanation": "sin(30°) = opposite/hypotenuse. x = 8 × sin(30°) = 8 × 0.5 = 4."
+    },
+    {
+      "id": "32619-set-a-q29",
+      "number": 29,
+      "topic": "mathematics",
+      "text": "Calculate the power dissipated in a 12 V DC circuit given that the current flowing is 0.5 A.",
+      "options": {
+        "a": "12 W",
+        "b": "6 W",
+        "c": "24 W",
+        "d": "12.5 W"
+      },
+      "answer": "b",
+      "explanation": "P = V × I = 12 × 0.5 = 6 W."
+    },
+    {
+      "id": "32619-set-a-q30",
+      "number": 30,
+      "topic": "protection_devices",
+      "text": "Which of the following is a device that uses an electromagnet to operate a trip mechanism if there is a short circuit in a circuit?",
+      "options": {
+        "a": "Motor",
+        "b": "Generator",
+        "c": "Solenoid",
+        "d": "MCB"
+      },
+      "answer": "d",
+      "explanation": "An MCB uses an electromagnet (magnetic trip) to respond instantaneously to short circuit currents. A solenoid is an electromagnet that creates linear motion but is not a protection device by itself."
+    },
+    {
+      "id": "32619-set-a-q31",
+      "number": 31,
+      "topic": "circuit_theory",
+      "text": "Which of the following best describes an electromagnet?",
+      "options": {
+        "a": "A magnet that is naturally magnetic and holds its magnetism indefinitely",
+        "b": "A magnet that gets its magnetism from a coil of wire with no current flowing through it",
+        "c": "A magnet that gets its magnetism from a coil of wire with an electrical current flowing through it",
+        "d": "A magnet that stays magnetised once a coil of wire with an electric current flowing through it is turned on and then off"
+      },
+      "answer": "c",
+      "explanation": "An electromagnet is magnetised by electrical current flowing through a coil of wire around a ferromagnetic core. When the current stops, the magnetism stops. Option A is a permanent magnet. Option D describes a permanent magnet made by magnetisation."
+    },
+    {
+      "id": "32619-set-a-q32",
+      "number": 32,
+      "topic": "mathematics",
+      "text": "Which of the following is equivalent to 0.6 A?",
+      "options": {
+        "a": "6 mA",
+        "b": "60 mA",
+        "c": "600 mA",
+        "d": "6000 mA"
+      },
+      "answer": "c",
+      "explanation": "1 A = 1000 mA. 0.6 A = 0.6 × 1000 = 600 mA."
+    },
+    {
+      "id": "32619-set-a-q33",
+      "number": 33,
+      "topic": "circuit_theory",
+      "text": "The unit of current is:",
+      "options": {
+        "a": "Volt",
+        "b": "Ampere",
+        "c": "Ohm",
+        "d": "Amp-meter"
+      },
+      "answer": "b",
+      "explanation": "Current is measured in Amperes (A). Voltage is in Volts (V). Resistance is in Ohms (Ω). An ammeter is the instrument, not the unit."
+    },
+    {
+      "id": "32619-set-a-q34",
+      "number": 34,
+      "topic": "circuit_theory",
+      "text": "Which of the following would be a typical use for mica in the electrical industry?",
+      "options": {
+        "a": "Cable cores",
+        "b": "Motor brushes",
+        "c": "Heating element supports",
+        "d": "Earth bars"
+      },
+      "answer": "c",
+      "explanation": "Mica is a naturally occurring mineral that is an excellent electrical insulator and can withstand high temperatures. It is used as an insulating support for heating elements in appliances like toasters and heaters."
+    },
+    {
+      "id": "32619-set-a-q35",
+      "number": 35,
+      "topic": "circuit_theory",
+      "text": "The total resistance of resistors in parallel will always be:",
+      "options": {
+        "a": "Less than the lowest resistor",
+        "b": "Greater than the lowest resistor",
+        "c": "Equal to the lowest resistor",
+        "d": "The addition of all resistors"
+      },
+      "answer": "a",
+      "explanation": "When resistors are in parallel, each additional path provides another route for current, reducing total resistance. The total is always less than the smallest individual resistor. Adding resistors in series gives the sum."
+    },
+    {
+      "id": "32619-set-a-q36",
+      "number": 36,
+      "topic": "circuit_theory",
+      "text": "Which of the following best describes a conductive fluid that is used to move ions between the plates of a cell?",
+      "options": {
+        "a": "The anode",
+        "b": "The electrode",
+        "c": "The electrolyte",
+        "d": "The cathode"
+      },
+      "answer": "c",
+      "explanation": "The electrolyte is the conductive solution or paste in a battery/cell that carries ions between the electrodes. The anode is the negative electrode, the cathode is the positive electrode."
+    },
+    {
+      "id": "32619-set-a-q37",
+      "number": 37,
+      "topic": "mathematics",
+      "text": "Use this circuit to answer questions 37–41: R1 (20 Ω) and R2 (30 Ω) are connected in parallel; this parallel group is in series with R3 (10.5 Ω); R4 (60 Ω) and R5 (100 Ω) are in parallel with each other, also in series with R3 and the R1/R2 group. Supply = 240 V DC. What is the total resistance of the parallel circuit containing R1 and R2?",
+      "context": "1/R_parallel = 1/20 + 1/30 = 3/60 + 2/60 = 5/60. R_parallel = 60/5 = 12 Ω.",
+      "image": "images/set-a-032.png",
+      "options": {
+        "a": "50 Ω",
+        "b": "12 Ω",
+        "c": "15 Ω",
+        "d": "20 Ω"
+      },
+      "answer": "b",
+      "explanation": "1/R = 1/20 + 1/30 = 3/60 + 2/60 = 5/60. R = 60/5 = 12 Ω."
+    },
+    {
+      "id": "32619-set-a-q38",
+      "number": 38,
+      "topic": "mathematics",
+      "image": "images/set-a-032.png",
+      "text": "Using the same circuit (R1=20Ω ∥ R2=30Ω, in series with R3=10.5Ω, in series with R4=60Ω ∥ R5=100Ω, supply 240V DC): What is the total resistance of the circuit?",
+      "context": "R1∥R2 = 12 Ω. R4∥R5 = 1/(1/60+1/100) = 1/(5/300+3/300) = 300/8 = 37.5 Ω. Total = 12 + 10.5 + 37.5 = 60 Ω.",
+      "options": {
+        "a": "12 Ω",
+        "b": "24 Ω",
+        "c": "60 Ω",
+        "d": "115 Ω"
+      },
+      "answer": "c",
+      "explanation": "R1∥R2 = 12 Ω. R4∥R5: 1/(1/60+1/100) = 1/(8/300) = 37.5 Ω. Total = 12 + 10.5 + 37.5 = 60 Ω."
+    },
+    {
+      "id": "32619-set-a-q39",
+      "number": 39,
+      "topic": "mathematics",
+      "image": "images/set-a-032.png",
+      "text": "Using the same circuit (total resistance 60 Ω, supply 240 V DC): What is the total current drawn by the circuit?",
+      "options": {
+        "a": "1 A",
+        "b": "4 A",
+        "c": "6 A",
+        "d": "8 A"
+      },
+      "answer": "b",
+      "explanation": "I = V/R = 240/60 = 4 A."
+    },
+    {
+      "id": "32619-set-a-q40",
+      "number": 40,
+      "topic": "mathematics",
+      "image": "images/set-a-032.png",
+      "text": "Using the same circuit (total current 4 A, R3 = 10.5 Ω): What is the volt drop across R3?",
+      "options": {
+        "a": "22 V",
+        "b": "32 V",
+        "c": "42 V",
+        "d": "52 V"
+      },
+      "answer": "c",
+      "explanation": "V = I × R = 4 × 10.5 = 42 V."
+    },
+    {
+      "id": "32619-set-a-q41",
+      "number": 41,
+      "topic": "mathematics",
+      "image": "images/set-a-032.png",
+      "text": "Using the same circuit (supply 240 V, V across R1∥R2 = 48 V, V across R3 = 42 V, R5 = 100 Ω): What is the current flow through R5?",
+      "context": "Voltage across R4∥R5 = 240 - 48 - 42 = 150 V. I through R5 = 150/100 = 1.5 A.",
+      "options": {
+        "a": "1 A",
+        "b": "1.5 A",
+        "c": "2 A",
+        "d": "2.5 A"
+      },
+      "answer": "b",
+      "explanation": "V across R4∥R5 = 240 - 48 - 42 = 150 V. I = V/R = 150/100 = 1.5 A."
+    },
+    {
+      "id": "32619-set-a-q42",
+      "number": 42,
+      "topic": "mathematics",
+      "text": "What would be the cost of using a 4 kW heater for 5 hours per day for 6 days if the unit cost per kWh is $0.35?",
+      "options": {
+        "a": "$33",
+        "b": "$92",
+        "c": "$23",
+        "d": "$42"
+      },
+      "answer": "d",
+      "explanation": "Energy = 4 kW × 5 h × 6 days = 120 kWh. Cost = 120 × $0.35 = $42."
+    },
+    {
+      "id": "32619-set-a-q43",
+      "number": 43,
+      "topic": "circuit_theory",
+      "text": "Which of the following is best described as 'the faces of a magnet where the lines of force leave and enter'?",
+      "options": {
+        "a": "Magnetic flux",
+        "b": "Magnetic poles",
+        "c": "Magnetic field strength",
+        "d": "Flux density"
+      },
+      "answer": "b",
+      "explanation": "Magnetic poles are the faces of a magnet (north and south) where flux lines leave (north) and enter (south). Magnetic flux is the total field. Flux density (B) is flux per unit area. Field strength (H) is a separate measure."
+    },
+    {
+      "id": "32619-set-a-q44",
+      "number": 44,
+      "topic": "circuit_theory",
+      "text": "In a 0.5 second period a sinewave has 30 complete cycles. Its frequency is therefore:",
+      "options": {
+        "a": "60 Hz",
+        "b": "15 Hz",
+        "c": "20 Hz",
+        "d": "10 Hz"
+      },
+      "answer": "a",
+      "explanation": "Frequency = cycles/second = 30/0.5 = 60 Hz. Note: NZ and Australia use 50 Hz mains frequency — 60 Hz is used in North America. The answer here is purely from the calculation, not NZ standard frequency."
+    },
+    {
+      "id": "32619-set-a-q45",
+      "number": 45,
+      "topic": "circuit_theory",
+      "text": "In an electrical appliance that has elements connected in parallel, the element that has the highest resistance also has the:",
+      "options": {
+        "a": "Highest current",
+        "b": "Greatest voltage drop",
+        "c": "Lowest heating effect",
+        "d": "Smallest voltage drop"
+      },
+      "answer": "c",
+      "explanation": "In a parallel circuit, all elements share the same voltage. For the element with highest resistance: I = V/R (lowest current), P = V²/R (lowest power = lowest heating). Voltage drop is the same for all parallel elements."
+    },
+    {
+      "id": "32619-set-a-q46",
+      "number": 46,
+      "topic": "circuit_theory",
+      "text": "If both the voltage and resistance of a circuit are doubled, what would happen to the current flow in the circuit?",
+      "options": {
+        "a": "It would be double the original value",
+        "b": "It would be half the original value",
+        "c": "It would increase by four times the original value",
+        "d": "It would not change"
+      },
+      "answer": "d",
+      "explanation": "I = V/R. If both V and R double: I = 2V/2R = V/R. The ratio stays the same, so current is unchanged."
+    },
+    {
+      "id": "32619-set-a-q47",
+      "number": 47,
+      "topic": "legislation",
+      "text": "According to the EWRB document 'Supervision Procedures for Trainees', the supervisor of apprentices and trainees must take responsibility for ensuring that:",
+      "options": {
+        "a": "The trainee's work is completed in a timely manner",
+        "b": "The work is completed in accordance with employer's needs",
+        "c": "The trainee is not allowed to work outside of their supervisor's limits",
+        "d": "The trainee only takes the allocated breaks"
+      },
+      "answer": "c",
+      "explanation": "The EWRB Supervision Procedures state the supervisor must ensure the trainee works within their own scope/limits. Timely completion and employer needs are management concerns, not the supervisor's regulatory responsibility."
+    },
+    {
+      "id": "32619-set-a-q48",
+      "number": 48,
+      "topic": "cables",
+      "text": "What happens to the cable current carrying capacity when cables are bundled together, such as when tied along a catenary wire?",
+      "options": {
+        "a": "It increases",
+        "b": "It stays the same",
+        "c": "It decreases"
+      },
+      "answer": "c",
+      "explanation": "Bundled cables cannot dissipate heat as effectively — each cable heats its neighbours. The combined thermal effect raises temperature, reducing the current-carrying capacity of each cable. A derating factor must be applied."
+    },
+    {
+      "id": "32619-set-a-q49",
+      "number": 49,
+      "topic": "testing",
+      "text": "What is the minimum insulation resistance reading allowable between motor windings?",
+      "options": {
+        "a": "0.01 MΩ",
+        "b": "0.5 MΩ",
+        "c": "1 MΩ",
+        "d": "10 Ω"
+      },
+      "answer": "c",
+      "explanation": "The minimum acceptable insulation resistance between motor windings is 1 MΩ. Below this, there is a risk of current leakage between windings, which can cause overheating and failure."
+    },
+    {
+      "id": "32619-set-a-q50",
+      "number": 50,
+      "topic": "protection_devices",
+      "text": "If an HRC fuse operates ('blows') at 20 A and has a utilisation category (fusing factor) of 1.25, what is the current rating of the fuse?",
+      "options": {
+        "a": "12.5 A",
+        "b": "20 A",
+        "c": "10 A",
+        "d": "16 A"
+      },
+      "answer": "d",
+      "explanation": "Fusing factor = fusing current / rated current. Rating = fusing current / fusing factor = 20 / 1.25 = 16 A."
+    },
+    {
+      "id": "32619-set-b-q1",
+      "number": 1,
+      "topic": "electrical_safety",
+      "text": "According to this chart, what would be the category of electric shock if someone received a shock of 200 mA for 200 ms?",
+      "image": "images/set-b-032.png",
+      "options": {
+        "a": "AC-3",
+        "b": "AC-4.1",
+        "c": "AC-4.2",
+        "d": "AC-4.3"
+      },
+      "answer": "a",
+      "explanation": "200 mA for 200 ms sits in zone AC-3 on the IEC body current chart. AC-3 covers strong dangerous reactions (likely muscle contraction) but ventricular fibrillation is not yet probable. The AC-4 zone threshold is not reached at this combination."
+    },
+    {
+      "id": "32619-set-b-q2",
+      "number": 2,
+      "topic": "legislation",
+      "text": "A third-year apprentice is working on a construction site. The main builder asked him to carry out some electrical installation alterations that require him to work in an onsite switchboard. Select an answer below that best describes the apprentice's next step.",
+      "options": {
+        "a": "Start the work",
+        "b": "Talk to his supervisor prior to starting the work",
+        "c": "Ask the other apprentice to help him with the work"
+      },
+      "answer": "b",
+      "explanation": "Any prescribed electrical work — including working in a switchboard — requires the apprentice to consult their supervisor before starting. The supervisor must authorise and supervise the work under EWRB Supervision Procedures."
+    },
+    {
+      "id": "32619-set-b-q3",
+      "number": 3,
+      "topic": "legislation",
+      "text": "Who issues the trainee licences in New Zealand?",
+      "options": {
+        "a": "Local Training Providers",
+        "b": "Waihanga Ara Rau",
+        "c": "Electrical Workers Registration Board",
+        "d": "Local library"
+      },
+      "answer": "c",
+      "explanation": "Trainee licences for electrical workers are issued by the Electrical Workers Registration Board (EWRB). Training providers and industry training organisations do not issue licences — that is the EWRB's role."
+    },
+    {
+      "id": "32619-set-b-q4",
+      "number": 4,
+      "topic": "legislation",
+      "text": "What is a way of eliminating a risk known as?",
+      "options": {
+        "a": "A control device",
+        "b": "A control measure",
+        "c": "A risk controller",
+        "d": "A risk evader"
+      },
+      "answer": "b",
+      "explanation": "In health and safety, a control measure is any action taken to eliminate or reduce a risk. Elimination is the highest level control measure. The term 'control device' and 'risk controller' are not standard HS terminology."
+    },
+    {
+      "id": "32619-set-b-q5",
+      "number": 5,
+      "topic": "electrical_safety",
+      "text": "If you become aware of a special hazard during your work, such as asbestos, you should:",
+      "options": {
+        "a": "Dispose of it safely",
+        "b": "Stop work and inform your supervisor",
+        "c": "Complete the work you are doing and report the hazard at the end of the day",
+        "d": "Ignore it"
+      },
+      "answer": "b",
+      "explanation": "Asbestos is a notifiable hazard. Work must stop immediately and the supervisor must be notified — asbestos must be managed by a licensed handler. Continuing work or disposing of it yourself is dangerous and illegal."
+    },
+    {
+      "id": "32619-set-b-q6",
+      "number": 6,
+      "topic": "electrical_safety",
+      "text": "You are starting work at a site for the first time. What must you undergo?",
+      "options": {
+        "a": "CPR refresher",
+        "b": "Housekeeping awareness training",
+        "c": "Induction",
+        "d": "Electrical Safety Training"
+      },
+      "answer": "c",
+      "explanation": "A site induction is required before any worker begins on a new site. The induction covers site-specific hazards, emergency procedures, and rules. A CPR refresher and general electrical training are not site-entry requirements."
+    },
+    {
+      "id": "32619-set-b-q7",
+      "number": 7,
+      "topic": "electrical_safety",
+      "text": "Select the item of PPE that would be used regularly when using a drill on a construction site.",
+      "options": {
+        "a": "Rubber Gauntlets",
+        "b": "Gas Detector",
+        "c": "Safety Glasses",
+        "d": "Site Radio"
+      },
+      "answer": "c",
+      "explanation": "Safety glasses protect against dust, chips, and debris when drilling. Rubber gauntlets are for high-voltage live work. A gas detector is for confined spaces. A site radio is a communication device, not PPE."
+    },
+    {
+      "id": "32619-set-b-q8",
+      "number": 8,
+      "topic": "electrical_safety",
+      "text": "If you drill a hole in fire rated constructions, what should you ensure?",
+      "options": {
+        "a": "That the hole is as large as possible and left open for the escape of smoke",
+        "b": "That the hole is as small as possible and left open for the escape of fire",
+        "c": "That the hole is as small as possible and sealed with heat transferring substance",
+        "d": "That the hole is as small as possible and sealed with fire rated sealant"
+      },
+      "answer": "d",
+      "explanation": "Fire rated constructions (fire cells) must maintain their fire rating. Any penetration must be sealed with an approved fire-rated sealant to restore the fire rating. Leaving holes open or using non-rated sealants defeats the purpose of the fire cell."
+    },
+    {
+      "id": "32619-set-b-q9",
+      "number": 9,
+      "topic": "electrical_safety",
+      "text": "You have isolated a circuit and locked it out with a tag and a padlock. Who is permitted to remove the padlock?",
+      "options": {
+        "a": "Only you",
+        "b": "Any worker on site",
+        "c": "You or your employer",
+        "d": "None of the above"
+      },
+      "answer": "a",
+      "explanation": "In a lockout/tagout system, only the person who placed the lock can remove it. This personal lock ensures that no one else can re-energise the circuit while you are working on it. Your employer does not have an automatic right to remove your personal lock."
+    },
+    {
+      "id": "32619-set-b-q10",
+      "number": 10,
+      "topic": "tools",
+      "text": "Identify the power tool shown below.",
+      "image": "images/set-b-039.png",
+      "options": {
+        "a": "Circular saw",
+        "b": "Mitre saw",
+        "c": "Reciprocating saw",
+        "d": "Oscillating saw"
+      },
+      "answer": "a",
+      "explanation": "A circular saw has a round spinning blade and a flat base plate for cutting straight lines. A mitre saw is mounted on a fixed base with a pivot arm. A reciprocating saw has a straight blade moving back and forth. An oscillating saw has a small blade that oscillates."
+    },
+    {
+      "id": "32619-set-b-q11",
+      "number": 11,
+      "topic": "tools",
+      "text": "Which of the following precautions should a user take when using a multi-tool?",
+      "options": {
+        "a": "Wear the appropriate PPE, choose the correct blade for the job, and set the speed appropriate to the material being cut",
+        "b": "Wear the appropriate PPE, use a general blade for all jobs, and set the speed appropriate to the material being cut",
+        "c": "Wear the appropriate PPE, choose the correct blade for the job, and set the speed to the highest possible",
+        "d": "Wear the appropriate PPE, choose the correct blade for the job, and set the speed to the lowest possible"
+      },
+      "answer": "a",
+      "explanation": "Safe multi-tool use requires: appropriate PPE, the correct blade for the material (blades are not interchangeable), and speed set to suit the material. Using a general blade for all jobs risks poor cuts and injury. Maximum or minimum speed is rarely the right choice."
+    },
+    {
+      "id": "32619-set-b-q12",
+      "number": 12,
+      "topic": "electrical_safety",
+      "text": "When using a corded handheld appliance while in a cramped space, which of the following safeguards should be used?",
+      "options": {
+        "a": "Fixed wired continuous flex that is connected to earth",
+        "b": "Use a double insulated appliance",
+        "c": "An MCB",
+        "d": "An unmonitored earth circuit"
+      },
+      "answer": "b",
+      "explanation": "In a cramped space where contact with earthed metal surfaces is likely, a double insulated (Class II) appliance is the safest choice — it has no exposed conductive parts and does not rely on an earth connection for safety. An MCB protects against overcurrent, not shock. An unmonitored earth circuit provides no additional protection."
+    },
+    {
+      "id": "32619-set-b-q13",
+      "number": 13,
+      "topic": "tools",
+      "text": "Identify the accessory shown.",
+      "image": "images/set-b-042.png",
+      "options": {
+        "a": "Ceiling rose",
+        "b": "Cord grip lamp holder",
+        "c": "Batten holder",
+        "d": "Junction box"
+      },
+      "answer": "d",
+      "explanation": "A junction box is an enclosure used to protect and conceal cable connections. Unlike a ceiling rose (which hangs a pendant lamp) or a batten holder (which mounts directly), a junction box is for joining cables together safely."
+    },
+    {
+      "id": "32619-set-b-q14",
+      "number": 14,
+      "topic": "plans",
+      "text": "Which of the following best describes a location diagram?",
+      "options": {
+        "a": "It shows the mounting positions of components but little or no wiring information",
+        "b": "It shows the shape and dimensions of a site",
+        "c": "It shows a floor plan of where equipment is to be positioned and general cable runs",
+        "d": "It shows the operation of an electrical circuit by showing how the circuit is connected, rather than its physical layout"
+      },
+      "answer": "c",
+      "explanation": "A location diagram (also called a layout drawing) shows a floor plan with the positions of equipment and the general routes of cable runs. Option A describes a component layout without wiring. Option D describes a schematic diagram. Option B describes a site plan."
+    },
+    {
+      "id": "32619-set-b-q15",
+      "number": 15,
+      "topic": "circuit_theory",
+      "text": "Which of the following best describes changeover contacts?",
+      "options": {
+        "a": "Normally open contacts that close when operated",
+        "b": "Normally closed contacts that open when operated",
+        "c": "How contacts sit when the circuit is de-energised",
+        "d": "A contact that has both a normally open contact and a normally closed side"
+      },
+      "answer": "d",
+      "explanation": "Changeover contacts (also called transfer or CO contacts) have both a normally open and a normally closed terminal sharing a common. When operated, the NC side opens and the NO side closes simultaneously — this 'changes over' the connection. Option A is a 'make' contact, option B is a 'break' contact."
+    },
+    {
+      "id": "32619-set-b-q16",
+      "number": 16,
+      "topic": "legislation",
+      "text": "The maintenance of electrical fittings in an installation that already exists best describes which of the following?",
+      "options": {
+        "a": "Low risk electrical work",
+        "b": "General risk electrical work",
+        "c": "High risk electrical work",
+        "d": "Non prescribed electrical work"
+      },
+      "answer": "a",
+      "explanation": "Under the Electricity (Safety) Regulations, maintenance of existing electrical fittings is classified as low risk electrical work. This category can be performed by registered electricians and certain other qualified people, but with fewer procedural requirements than general or high risk work."
+    },
+    {
+      "id": "32619-set-b-q17",
+      "number": 17,
+      "topic": "testing",
+      "text": "Which of these is the appropriate test instrument to measure the potential difference between two points in an electrical circuit?",
+      "options": {
+        "a": "Insulation Resistance tester",
+        "b": "Voltmeter",
+        "c": "Ammeter",
+        "d": "Ohmmeter"
+      },
+      "answer": "b",
+      "explanation": "A voltmeter measures potential difference (voltage) between two points and is connected in parallel with the circuit. An ammeter measures current (in series). An ohmmeter measures resistance (on de-energised circuits). An insulation resistance tester applies a high DC voltage to test insulation quality."
+    },
+    {
+      "id": "32619-set-b-q20",
+      "number": 20,
+      "topic": "testing",
+      "text": "A 500 metre cable has an insulation resistance of 500 MΩ. What would the insulation resistance of the cable be if it was shortened to 250 metres?",
+      "options": {
+        "a": "250 MΩ",
+        "b": "500 MΩ",
+        "c": "750 MΩ",
+        "d": "1000 MΩ"
+      },
+      "answer": "d",
+      "explanation": "Insulation resistance is inversely proportional to cable length. Halving the length doubles the insulation resistance: 500 MΩ × (500/250) = 1000 MΩ. Shorter cable = fewer parallel leakage paths = higher insulation resistance."
+    },
+    {
+      "id": "32619-set-b-q22",
+      "number": 22,
+      "topic": "testing",
+      "text": "Which of the following would be indicated by an infinity reading from a continuity test?",
+      "options": {
+        "a": "A short circuit",
+        "b": "A leakage circuit",
+        "c": "A parallel circuit",
+        "d": "An open circuit"
+      },
+      "answer": "d",
+      "explanation": "An infinity (∞) reading on a continuity test means no current path exists — the circuit is open (broken). A short circuit would read close to 0 Ω. A leakage circuit would show an unexpected low-resistance path. A parallel circuit is a circuit topology, not a test result."
+    },
+    {
+      "id": "32619-set-b-q23",
+      "number": 23,
+      "topic": "protection_devices",
+      "text": "When there is no fault in a circuit protected by an RCD, the current flowing through the RCD in the phase conductor is:",
+      "options": {
+        "a": "Greater than the current flowing in the neutral conductor",
+        "b": "Less than the current flowing in the neutral conductor",
+        "c": "Equal to the current flowing in the neutral conductor"
+      },
+      "answer": "c",
+      "explanation": "In a healthy circuit with no earth fault, all current that flows out through the phase returns through the neutral — phase and neutral currents are equal. The RCD's toroidal transformer senses the difference; zero difference = no trip. Only when current leaks to earth does the balance upset and the RCD trips."
+    },
+    {
+      "id": "32619-set-b-q25",
+      "number": 25,
+      "topic": "protection_devices",
+      "text": "What additional protection does an RCBO have over an RCCB?",
+      "options": {
+        "a": "Earth leakage",
+        "b": "Phase reversal",
+        "c": "Over-current",
+        "d": "Reversed polarity"
+      },
+      "answer": "c",
+      "explanation": "An RCCB (Residual Current Circuit Breaker) only protects against earth leakage. An RCBO (Residual Current Breaker with Overcurrent) adds overcurrent (overload and short circuit) protection — it combines the function of an RCCB and an MCB in one device."
+    },
+    {
+      "id": "32619-set-b-q26",
+      "number": 26,
+      "topic": "circuit_theory",
+      "text": "Voltmeters should always be connected in:",
+      "options": {
+        "a": "Parallel with the load",
+        "b": "Series-parallel with the load",
+        "c": "Series with the load",
+        "d": "Any of the above"
+      },
+      "answer": "a",
+      "explanation": "A voltmeter measures the potential difference across a component and must be connected in parallel with it. It has very high internal resistance so only a tiny current flows through it, avoiding disturbing the circuit. Connecting a voltmeter in series would block current flow."
+    },
+    {
+      "id": "32619-set-b-q27",
+      "number": 27,
+      "topic": "mathematics",
+      "text": "Calculate the length of side B of the right-angled triangle shown below given the following values: A = 10, C = 30",
+      "context": "B² = C² - A² = 30² - 10² = 900 - 100 = 800. B = √800 = 28.28 ≈ 28.3",
+      "options": {
+        "a": "25.6",
+        "b": "28.3",
+        "c": "31.6",
+        "d": "34.3"
+      },
+      "answer": "b",
+      "explanation": "Pythagoras: B² = C² - A² = 900 - 100 = 800. B = √800 = 28.28 ≈ 28.3."
+    },
+    {
+      "id": "32619-set-b-q28",
+      "number": 28,
+      "topic": "mathematics",
+      "text": "For the right-angled triangle below, calculate the length of the side marked 'x'. (hypotenuse = 12, base angle = 30°, x is the vertical side opposite the 30° angle.)",
+      "context": "sin(30°) = opposite/hypotenuse = x/12. x = 12 × sin(30°) = 12 × 0.5 = 6.",
+      "image": "images/set-b-051.png",
+      "options": {
+        "a": "3",
+        "b": "4",
+        "c": "5",
+        "d": "6"
+      },
+      "answer": "d",
+      "explanation": "sin(30°) = opposite/hypotenuse. x = 12 × sin(30°) = 12 × 0.5 = 6."
+    },
+    {
+      "id": "32619-set-b-q29",
+      "number": 29,
+      "topic": "mathematics",
+      "text": "Calculate the power in a 5 V DC circuit given that the resistance of the circuit is 2 Ω.",
+      "options": {
+        "a": "10 W",
+        "b": "25 W",
+        "c": "35.5 W",
+        "d": "12.5 W"
+      },
+      "answer": "d",
+      "explanation": "P = V²/R = 5² / 2 = 25 / 2 = 12.5 W."
+    },
+    {
+      "id": "32619-set-b-q30",
+      "number": 30,
+      "topic": "circuit_theory",
+      "text": "Why is a magnetic core used in an electromagnet?",
+      "options": {
+        "a": "To reduce the strength of the magnet by focusing the magnetic flux through the core rather than the surrounding air",
+        "b": "To increase the strength of the magnet by focusing the magnetic flux through the core rather than the surrounding air",
+        "c": "It reduces the strength of the magnet by focusing the magnetic flux through the air rather than the core",
+        "d": "It increases the strength of the magnet by focusing the magnetic flux through the air rather than the core"
+      },
+      "answer": "b",
+      "explanation": "A ferromagnetic core (e.g. iron) has much higher permeability than air, so it concentrates (focuses) the magnetic flux through itself rather than through the surrounding air. This greatly increases the magnetic field strength of the electromagnet."
+    },
+    {
+      "id": "32619-set-b-q31",
+      "number": 31,
+      "topic": "circuit_theory",
+      "text": "Which of the following uses a coil of wire, magnetism, and movement to produce current?",
+      "options": {
+        "a": "Motor",
+        "b": "Generator",
+        "c": "Solenoid",
+        "d": "Relay"
+      },
+      "answer": "b",
+      "explanation": "A generator converts mechanical movement into electrical current using electromagnetic induction — a coil of wire moves within a magnetic field (or vice versa), inducing an EMF. A motor does the reverse (electrical to mechanical). A solenoid and relay use electrical energy to create movement, not the other way around."
+    },
+    {
+      "id": "32619-set-b-q32",
+      "number": 32,
+      "topic": "mathematics",
+      "text": "Which of the following is equivalent to 60 000 000 V?",
+      "options": {
+        "a": "60 MV",
+        "b": "600 MV",
+        "c": "6 GV",
+        "d": "600 GV"
+      },
+      "answer": "a",
+      "explanation": "1 MV = 1,000,000 V. 60,000,000 V = 60 × 10⁶ V = 60 MV. 1 GV = 1,000,000,000 V, so 60,000,000 V = 0.06 GV (not a whole number option)."
+    },
+    {
+      "id": "32619-set-b-q33",
+      "number": 33,
+      "topic": "circuit_theory",
+      "text": "The unit of Resistance is:",
+      "options": {
+        "a": "Volt",
+        "b": "Ampere",
+        "c": "Ohms",
+        "d": "Amp-meter"
+      },
+      "answer": "c",
+      "explanation": "Resistance is measured in Ohms (Ω), named after Georg Ohm. Voltage is in Volts (V). Current is in Amperes (A). An ammeter is the measuring instrument for current, not a unit."
+    },
+    {
+      "id": "32619-set-b-q34",
+      "number": 34,
+      "topic": "mathematics",
+      "text": "Use this circuit to answer questions 34–38: R1 (10 Ω) and R2 (12 Ω) are in parallel; this group is in series with R3 (20 Ω); R4 (30 Ω), R5 (40 Ω), and R6 (50 Ω) are in parallel with each other and in series with R3 and the R1/R2 group. Supply = 100 V DC. What is the total parallel resistance of R1 and R2?",
+      "context": "1/R = 1/10 + 1/12 = 6/60 + 5/60 = 11/60. R = 60/11 = 5.45 Ω.",
+      "image": "images/set-b-062.png",
+      "options": {
+        "a": "3.35 Ω",
+        "b": "5.45 Ω",
+        "c": "6.75 Ω",
+        "d": "22 Ω"
+      },
+      "answer": "b",
+      "explanation": "1/R = 1/10 + 1/12 = 6/60 + 5/60 = 11/60. R = 60/11 = 5.45 Ω."
+    },
+    {
+      "id": "32619-set-b-q35",
+      "number": 35,
+      "topic": "mathematics",
+      "text": "Using the same circuit (R4=30Ω, R5=40Ω, R6=50Ω in parallel): What is the total parallel resistance of R4, R5 and R6?",
+      "context": "1/R = 1/30 + 1/40 + 1/50 = 20/600 + 15/600 + 12/600 = 47/600. R = 600/47 = 12.77 Ω.",
+      "image": "images/set-b-062.png",
+      "options": {
+        "a": "120 Ω",
+        "b": "10.23 Ω",
+        "c": "11.44 Ω",
+        "d": "12.77 Ω"
+      },
+      "answer": "d",
+      "explanation": "1/R = 1/30 + 1/40 + 1/50 = 20/600 + 15/600 + 12/600 = 47/600. R = 600/47 = 12.77 Ω."
+    },
+    {
+      "id": "32619-set-b-q36",
+      "number": 36,
+      "topic": "mathematics",
+      "text": "Using the same circuit (R1∥R2 = 5.45Ω, R3 = 20Ω, R4∥R5∥R6 = 12.77Ω, supply 100V): How much current would flow through R3?",
+      "context": "Total R = 5.45 + 20 + 12.77 = 38.22 Ω. I = 100/38.22 = 2.6 A.",
+      "image": "images/set-b-062.png",
+      "options": {
+        "a": "0.6 A",
+        "b": "1.6 A",
+        "c": "2.6 A",
+        "d": "3.6 A"
+      },
+      "answer": "c",
+      "explanation": "Total R = 5.45 + 20 + 12.77 = 38.22 Ω. I = V/R = 100/38.22 = 2.6 A."
+    },
+    {
+      "id": "32619-set-b-q37",
+      "number": 37,
+      "topic": "mathematics",
+      "text": "Using the same circuit (total current 2.6A, R1∥R2 = 5.45Ω): What is the volt drop across R2?",
+      "context": "V across R1∥R2 = I × R = 2.6 × 5.45 = 14.3 V. Since R1∥R2 are in parallel, this is also the volt drop across R2.",
+      "image": "images/set-b-062.png",
+      "options": {
+        "a": "10.3 V",
+        "b": "12.3 V",
+        "c": "14.3 V",
+        "d": "16.3 V"
+      },
+      "answer": "c",
+      "explanation": "V = I × R = 2.6 × 5.45 = 14.17 ≈ 14.3 V. The volt drop across the parallel R1/R2 group applies equally to both R1 and R2."
+    },
+    {
+      "id": "32619-set-b-q38",
+      "number": 38,
+      "topic": "mathematics",
+      "text": "Using the same circuit (supply 100V, V across R1∥R2 = 14.3V, V across R3 = 52V, R5 = 40Ω): How much current would flow through R5?",
+      "context": "V across R4∥R5∥R6 = 100 - 14.3 - 52 = 33.7 V ≈ 33.41 V. I through R5 = 33.41/40 = 0.835 ≈ 0.8 A.",
+      "image": "images/set-b-062.png",
+      "options": {
+        "a": "0.8 A",
+        "b": "1.8 A",
+        "c": "2.8 A",
+        "d": "3.8 A"
+      },
+      "answer": "a",
+      "explanation": "V across R4∥R5∥R6 = 100 - 14.3 - (2.6 × 20) = 100 - 14.3 - 52 = 33.7 V. I = 33.7/40 = 0.84 ≈ 0.8 A."
+    },
+    {
+      "id": "32619-set-b-q39",
+      "number": 39,
+      "topic": "legislation",
+      "text": "Which of the following is an example of low voltage as defined in the Electricity (Safety) Regulations?",
+      "options": {
+        "a": "24 V AC",
+        "b": "100 V AC",
+        "c": "1010 V AC",
+        "d": "1500 V AC"
+      },
+      "answer": "b",
+      "explanation": "The Electricity (Safety) Regulations define low voltage as above 50 V AC (or 120 V DC) up to and including 1000 V AC (or 1500 V DC). 24 V AC is extra low voltage (ELV). 1010 V AC and 1500 V AC exceed 1000 V AC, so they are high voltage. 100 V AC falls within the low voltage range."
+    },
+    {
+      "id": "32619-set-b-q40",
+      "number": 40,
+      "topic": "circuit_theory",
+      "text": "Which of the following statements best describes circuit resistance?",
+      "options": {
+        "a": "The acceleration of current flow",
+        "b": "The opposition to current flow",
+        "c": "The opposition to voltage",
+        "d": "The acceleration of voltage"
+      },
+      "answer": "b",
+      "explanation": "Resistance is the property of a conductor that opposes the flow of electrical current. The higher the resistance, the less current flows for a given voltage (Ohm's Law: I = V/R). It does not accelerate anything, and it is current (not voltage) that is opposed."
+    },
+    {
+      "id": "32619-set-b-q41",
+      "number": 41,
+      "topic": "circuit_theory",
+      "text": "How does corrosion occur?",
+      "options": {
+        "a": "When two pieces of the same material are in the presence of an electrolyte",
+        "b": "When two different materials are in the presence of an electrolyte",
+        "c": "When two pieces of the same material are in the presence of air",
+        "d": "When two different materials are in the presence of air"
+      },
+      "answer": "b",
+      "explanation": "Galvanic (electrolytic) corrosion occurs when two dissimilar metals are in electrical contact in the presence of an electrolyte (e.g., moisture). The difference in electrode potential causes an electrochemical reaction that deteriorates the less noble metal. Same materials in an electrolyte do not create a galvanic cell."
+    },
+    {
+      "id": "32619-set-b-q42",
+      "number": 42,
+      "topic": "circuit_theory",
+      "text": "Devices which produce an EMF through a chemical reaction would best describe:",
+      "options": {
+        "a": "Generators",
+        "b": "Solar cells",
+        "c": "Batteries",
+        "d": "Thermocouples"
+      },
+      "answer": "c",
+      "explanation": "Batteries (and cells) produce an EMF via a chemical reaction between electrodes and electrolyte. Generators convert mechanical energy to EMF. Solar cells convert light energy (photovoltaic effect). Thermocouples produce a small EMF from a temperature difference between two dissimilar metals."
+    },
+    {
+      "id": "32619-set-b-q43",
+      "number": 43,
+      "topic": "mathematics",
+      "text": "A 1.5 kW heater is used for 10 hours per day for 5 days. If the unit cost per kWh is $0.35, the total cost of using this heater would be:",
+      "options": {
+        "a": "$3.35",
+        "b": "$9.25",
+        "c": "$18.99",
+        "d": "$26.25"
+      },
+      "answer": "d",
+      "explanation": "Energy = 1.5 kW × 10 h/day × 5 days = 75 kWh. Cost = 75 × $0.35 = $26.25."
+    },
+    {
+      "id": "32619-set-b-q44",
+      "number": 44,
+      "topic": "mathematics",
+      "text": "What is the frequency of a sinewave that has 20 complete cycles in a 0.5 second period?",
+      "options": {
+        "a": "40 Hz",
+        "b": "10 Hz",
+        "c": "20 Hz",
+        "d": "15 Hz"
+      },
+      "answer": "a",
+      "explanation": "Frequency = cycles / time = 20 / 0.5 = 40 Hz."
+    },
+    {
+      "id": "32619-set-b-q46",
+      "number": 46,
+      "topic": "testing",
+      "text": "Why are insulation resistance tests carried out at a higher voltage than the equipment being tested operates at? (Example: a 230 V AC appliance will be tested at 500 V DC.)",
+      "options": {
+        "a": "Because 230 V is not high enough to find any faults",
+        "b": "The real voltage put out by the IR tester is lower than stated",
+        "c": "To ensure the equipment is tested above the peak value of the supply voltage",
+        "d": "To test if the equipment would survive a lightning strike"
+      },
+      "answer": "c",
+      "explanation": "Mains AC voltage (e.g. 230 V RMS) has a peak value of 230 × √2 ≈ 325 V. Testing at 500 V DC ensures the insulation is stressed above the peak mains voltage, revealing weaknesses that would not show up at lower test voltages. The insulation must withstand the peak, not just the RMS value."
+    },
+    {
+      "id": "32619-set-b-q49",
+      "number": 49,
+      "topic": "legislation",
+      "text": "Can a rewireable fuse be installed in a new installation?",
+      "options": {
+        "a": "Yes",
+        "b": "Only if it makes financial sense",
+        "c": "No",
+        "d": "Only if advised by your supervisor"
+      },
+      "answer": "c",
+      "explanation": "Rewireable (semi-enclosed) fuses cannot be installed in new electrical installations in New Zealand. They have been superseded by MCBs and HRC fuses which offer more reliable and consistent protection. Their use in new work is prohibited under AS/NZS 3000 (the Wiring Rules)."
+    }
+  ]
+}

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Electrical Quiz">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>Electrical Quiz</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f172a;
+      --surface:   #1e293b;
+      --surface2:  #334155;
+      --border:    #475569;
+      --text:      #f1f5f9;
+      --subtext:   #94a3b8;
+      --primary:   #3b82f6;
+      --primary-d: #2563eb;
+      --correct:   #22c55e;
+      --incorrect: #ef4444;
+      --warn:      #f59e0b;
+    }
+
+    html { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: none;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      justify-content: center;
+      padding:
+        max(16px, env(safe-area-inset-top))
+        max(16px, env(safe-area-inset-right))
+        max(40px, calc(16px + env(safe-area-inset-bottom)))
+        max(16px, env(safe-area-inset-left));
+    }
+
+    .app { width: 100%; max-width: 620px; user-select: none; }
+
+    /* ── Header ── */
+    .hdr { display: flex; align-items: baseline; gap: 10px; padding: 14px 0 20px; }
+    .hdr-title { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+    .hdr-sub   { font-size: 0.75rem; color: var(--subtext); }
+    .hdr-back  { color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--subtext); font-weight: 600; margin-bottom: 10px;
+    }
+
+    /* ── Card ── */
+    .card { background: var(--surface); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
+
+    /* ── Stats ── */
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 14px; }
+    .stat  { background: var(--surface); border-radius: 12px; padding: 14px 10px; text-align: center; }
+    .stat .val { font-size: 1.8rem; font-weight: 700; color: var(--primary); line-height: 1; }
+    .stat .lbl { font-size: 0.68rem; color: var(--subtext); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ── Topic pills ── */
+    .pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+    .pill {
+      background: var(--surface2); border: 2px solid transparent; border-radius: 20px;
+      padding: 5px 13px; font-size: 0.78rem; cursor: pointer; color: var(--subtext);
+      transition: all 0.12s; touch-action: manipulation;
+    }
+    .pill:hover { border-color: var(--primary); color: var(--text); }
+    .pill.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 22px; border-radius: 10px; font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; border: none; transition: all 0.12s; color: var(--text);
+      touch-action: manipulation;
+    }
+    .btn-primary  { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-d); }
+    .btn-ghost    { background: var(--surface2); }
+    .btn-ghost:hover { background: var(--border); }
+    .btn-full     { width: 100%; font-size: 1rem; padding: 14px; }
+    .btn-sm       { padding: 8px 15px; font-size: 0.82rem; }
+    .btn-row      { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* ── Progress bar ── */
+    .pbar-wrap { background: var(--surface2); border-radius: 4px; height: 5px; margin-bottom: 18px; overflow: hidden; }
+    .pbar      { height: 100%; background: var(--primary); border-radius: 4px; transition: width 0.3s; }
+
+    /* ── Quiz meta ── */
+    .q-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .q-counter { font-size: 0.82rem; color: var(--subtext); font-weight: 600; }
+    .q-topic-badge {
+      font-size: 0.68rem; background: var(--surface2); padding: 3px 10px;
+      border-radius: 12px; color: var(--subtext); text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* ── Question ── */
+    .q-text    { font-size: 1rem; line-height: 1.6; margin-bottom: 14px; }
+    .q-context {
+      font-size: 0.83rem; color: var(--subtext); background: var(--surface2);
+      border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.5;
+      border-left: 3px solid var(--primary);
+    }
+
+    /* ── Options ── */
+    .options { display: flex; flex-direction: column; gap: 9px; margin-bottom: 14px; }
+    .opt {
+      display: flex; align-items: flex-start; gap: 12px; background: var(--surface2);
+      border: 2px solid transparent; border-radius: 10px; padding: 13px 15px;
+      cursor: pointer; text-align: left; color: var(--text); font-size: 0.92rem;
+      line-height: 1.4; width: 100%; transition: all 0.12s;
+      touch-action: manipulation;
+    }
+    .opt:hover:not(:disabled) { border-color: var(--primary); background: #1e3a5f; }
+    .opt:disabled { cursor: default; }
+    .opt-letter { font-weight: 700; color: var(--primary); min-width: 18px; font-size: 0.88rem; flex-shrink: 0; }
+    .opt.opt-correct  { background: #14532d; border-color: var(--correct); }
+    .opt.opt-correct .opt-letter { color: var(--correct); }
+    .opt.opt-wrong    { background: #450a0a; border-color: var(--incorrect); }
+    .opt.opt-wrong .opt-letter { color: var(--incorrect); }
+    .opt.opt-dim      { opacity: 0.38; }
+
+    /* ── Feedback ── */
+    .feedback { border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; line-height: 1.5; }
+    .feedback.fb-correct   { background: #14532d; border: 1px solid var(--correct); }
+    .feedback.fb-incorrect { background: #450a0a; border: 1px solid var(--incorrect); }
+    .feedback .verdict { font-weight: 700; font-size: 0.95rem; margin-bottom: 5px; }
+    .feedback .verdict.v-correct   { color: var(--correct); }
+    .feedback .verdict.v-incorrect { color: var(--incorrect); }
+    .feedback .expl { font-size: 0.88rem; color: var(--text); opacity: 0.9; }
+
+    /* ── End screen ── */
+    .score-wrap { text-align: center; padding: 20px 0 10px; }
+    .score-big  { font-size: 4rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .score-pct  { font-size: 1rem; color: var(--subtext); margin-top: 4px; }
+    .pass-badge {
+      display: inline-block; margin-top: 14px; padding: 6px 20px;
+      border-radius: 20px; font-weight: 700; font-size: 0.85rem;
+    }
+    .pass-badge.pass   { background: #14532d; color: var(--correct); }
+    .pass-badge.nopass { background: #450a0a; color: var(--incorrect); }
+
+    .breakdown .brow {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 0; border-bottom: 1px solid var(--surface2); font-size: 0.88rem;
+    }
+    .breakdown .brow:last-child { border-bottom: none; }
+    .brow-topic { color: var(--subtext); }
+    .brow-score { font-weight: 600; }
+
+    /* ── Question image ── */
+    .q-image { display: none; margin-bottom: 14px; border-radius: 8px; overflow: hidden; background: #fff; }
+    .q-image img { width: 100%; height: auto; display: block; border-radius: 8px; }
+
+    /* ── Misc ── */
+    .note { font-size: 0.72rem; color: var(--subtext); text-align: center; padding: 18px 0 6px; }
+
+    .screen { display: none; }
+    .screen.active { display: block; }
+    .sep { margin-top: 12px; }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ════════════════════════════════ LOADING ════════════════════════════════ -->
+  <div id="screen-loading" class="screen active">
+    <div class="hdr"><span class="hdr-title">Loading…</span></div>
+  </div>
+
+  <!-- ════════════════════════════════ ERROR ════════════════════════════════ -->
+  <div id="screen-error" class="screen">
+    <div class="hdr"><span class="hdr-title">⚠️ Quiz</span></div>
+    <div class="card">
+      <div id="error-msg"></div>
+      <a class="btn btn-primary btn-full" href="home.html" style="margin-top:14px;text-decoration:none;">‹ Back to quizzes</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════ HOME ════════════════════════════════ -->
+  <div id="screen-home" class="screen">
+    <div class="hdr">
+      <a href="home.html" class="hdr-back">‹ Quizzes</a>
+      <span class="hdr-title" id="quiz-title">Quiz</span>
+      <span class="hdr-sub" id="quiz-sub"></span>
+    </div>
+
+    <div class="stats" id="home-stats"></div>
+
+    <div class="card">
+      <div class="section-label">Filter by topic</div>
+      <div class="pills" id="topic-pills"></div>
+      <div class="section-label" style="margin-top:16px;">Number of questions</div>
+      <div class="pills" id="count-pills">
+        <button class="pill active" onclick="selectCount(10)">10</button>
+        <button class="pill" onclick="selectCount(20)">20</button>
+        <button class="pill" onclick="selectCount(30)">30</button>
+      </div>
+      <button class="btn btn-primary btn-full" id="btn-start" onclick="startQuiz()">Start Quiz — 10 questions</button>
+    </div>
+
+
+    <div class="note">Progress saved in this browser · Last session: <span id="last-updated">never</span></div>
+  </div>
+
+  <!-- ════════════════════════════════ QUIZ ════════════════════════════════ -->
+  <div id="screen-quiz" class="screen">
+    <div style="padding-top:14px;">
+      <div class="pbar-wrap"><div class="pbar" id="quiz-pbar"></div></div>
+      <div class="q-meta">
+        <span class="q-counter" id="q-counter"></span>
+        <span class="q-topic-badge" id="q-topic-badge"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="q-text" id="q-text"></div>
+      <div class="q-image" id="q-image"></div>
+      <div class="q-context" id="q-context"></div>
+      <div class="options" id="q-options"></div>
+      <div class="feedback" id="q-feedback"></div>
+      <button class="btn btn-primary btn-full" id="btn-next" onclick="nextQuestion()"></button>
+    </div>
+
+    <button class="btn btn-ghost btn-sm" onclick="showHome()" style="margin-top:4px;">✕ End quiz</button>
+  </div>
+
+  <!-- ════════════════════════════════ END ════════════════════════════════ -->
+  <div id="screen-end" class="screen">
+    <div class="hdr">
+      <span class="hdr-title" id="end-title">Quiz</span>
+      <span class="hdr-sub">Results</span>
+    </div>
+
+    <div class="card">
+      <div class="score-wrap">
+        <div class="score-big" id="end-score"></div>
+        <div class="score-pct" id="end-pct"></div>
+        <div id="end-badge"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-label">By topic</div>
+      <div class="breakdown" id="end-breakdown"></div>
+    </div>
+
+    <div class="card">
+      <div class="btn-row">
+        <button class="btn btn-primary" style="flex:1" onclick="startQuiz()">Quiz again</button>
+        <button class="btn btn-ghost" onclick="showHome()">Home</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Question banks are loaded at runtime from banks/ (see catalog.json). -->
+
+<!-- ══════════════════════════════ APP LOGIC ══════════════════════════════ -->
+<script>
+'use strict';
+
+// ── Data setup ────────────────────────────────────────────────────────────
+// The question bank is no longer embedded in the page — it is loaded at runtime
+// from a bank file chosen by the ?quiz= URL parameter (see init() at the bottom).
+// BANK holds the loaded quiz. TOPIC_LABELS comes from the bank itself, so the
+// engine is not tied to any one subject (electrical, shooting, etc).
+let BANK = null;
+let TOPIC_LABELS = {};
+let quizId = null;
+
+// localStorage holds EVERY quiz's progress under one key, namespaced by quiz id:
+//   { "<quizId>": { "<questionId>": { times_asked, times_correct, last_asked } } }
+// localStorage is a simple key/value store built into every browser; data
+// persists after closing the app and is tied to this device/browser.
+const STORAGE_KEY = 'quizapp_progress';
+
+// The earlier single-quiz version of this app saved a flat { questionId: {...} }
+// map under this key. loadProgress() migrates it into the structure above once.
+const LEGACY_KEY = 'electrical_quiz_progress';
+const LEGACY_QUIZ_ID = 'elec-electrician-capstone-yr1';
+
+
+// ── App state ─────────────────────────────────────────────────────────────
+// These variables hold the current state of the app. They are declared with
+// 'let' so they can be updated as the user interacts with the quiz.
+
+// Tracks how many times each question has been asked and answered correctly.
+// Shape: { "question-id": { times_asked: 5, times_correct: 3, last_asked: "2025-05-28" } }
+let progress = {};
+
+// The topic filter the user has selected on the home screen. null means "all topics".
+let selectedTopic = null;
+
+// How many questions the user wants per quiz session (10, 20, or 30).
+let selectedCount = 10;
+
+// The list of question objects selected for the current quiz session.
+let quizQs = [];
+
+// The index (0-based) of whichever question is currently on screen.
+let currentIdx = 0;
+
+// A record of every answer given in this session — used to build the end-screen summary.
+// Shape: [{ id: "question-id", topic: "electrical_safety", correct: true }, ...]
+let sessionAns = [];
+
+
+// ── Persistence ───────────────────────────────────────────────────────────
+// localStorage stores everything as plain text strings, so we use JSON.parse
+// to convert the stored string back into a JavaScript object on load,
+// and JSON.stringify to convert the object back to a string when saving.
+
+// Reads the whole progress store (all quizzes) from localStorage.
+function readStore() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (_) {
+    // If the stored data is somehow corrupt, start fresh rather than crashing.
+    return {};
+  }
+}
+
+function loadProgress() {
+  const store = readStore();
+
+  // One-time migration from the old single-quiz app: fold its flat progress
+  // map in under the capstone quiz id — the only quiz that version had.
+  try {
+    const legacyRaw = localStorage.getItem(LEGACY_KEY);
+    if (legacyRaw && !store[LEGACY_QUIZ_ID]) {
+      store[LEGACY_QUIZ_ID] = JSON.parse(legacyRaw);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    }
+  } catch (_) { /* ignore a corrupt legacy value */ }
+
+  // progress holds only the CURRENT quiz's history; the rest of the code
+  // works against it exactly as before.
+  progress = (quizId && store[quizId]) ? store[quizId] : {};
+}
+
+function saveProgress() {
+  // Merge this quiz's progress back into the shared store so other quizzes'
+  // history is preserved. Called immediately after every answer so nothing is
+  // lost if the app is closed mid-quiz.
+  const store = readStore();
+  store[quizId] = progress;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+}
+
+
+// ── Question weighting ────────────────────────────────────────────────────
+// The quiz uses weighted random selection so questions you struggle with
+// appear more often, and questions you've mastered appear less often.
+// A higher weight = higher chance of being picked.
+
+function getWeight(qId) {
+  const h = progress[qId];
+
+  // If the question has never been seen, give it a moderate-high weight
+  // so new questions get covered before ones already in the rotation.
+  if (!h || !h.times_asked) return 2.0;
+
+  // Calculate what fraction of attempts were correct (a number between 0 and 1).
+  const ratio = h.times_correct / h.times_asked;
+
+  if (ratio >= 0.8) return 0.5;  // Mostly correct — show less often
+  if (ratio >= 0.5) return 1.5;  // Middling — show at normal rate
+  return 3.0;                     // Struggling — show much more often
+}
+
+// Picks n questions from the pool without replacement, using the weights
+// above to bias the selection toward weaker questions.
+function weightedSample(pool, n) {
+  // Spread into a new array so we can safely remove items as we pick them,
+  // without modifying the original BANK data.
+  const items    = [...pool];
+  const selected = [];
+
+  for (let i = 0; i < n && items.length > 0; i++) {
+    // Calculate a weight for every remaining question in the pool.
+    const weights = items.map(q => getWeight(q.id));
+
+    // Sum all weights — this becomes the total "space" we pick from.
+    const total = weights.reduce((a, b) => a + b, 0);
+
+    // Pick a random point anywhere in that total space.
+    let r = Math.random() * total;
+
+    // Walk through the weights, subtracting each one until r drops to zero or
+    // below. The question where r first hits zero is the one selected.
+    // Questions with higher weights occupy a larger slice of the total space,
+    // so they're more likely to be the one where r runs out.
+    let idx = items.length - 1;
+    for (let j = 0; j < weights.length; j++) {
+      r -= weights[j];
+      if (r <= 0) { idx = j; break; }
+    }
+
+    selected.push(items[idx]);
+    // Remove the selected question from the pool so it can't be picked again
+    // in the same session.
+    items.splice(idx, 1);
+  }
+
+  return selected;
+}
+
+
+// ── Quiz flow ─────────────────────────────────────────────────────────────
+
+// Called when the user taps "Start Quiz". Builds the question list for this
+// session and switches to the quiz screen.
+function startQuiz() {
+  // Nothing to start if the bank is empty (e.g. a placeholder quiz).
+  if (!BANK || !BANK.questions.length) return;
+
+  // If a topic filter is active, only draw from questions in that topic.
+  // Otherwise use the full question bank.
+  const pool = selectedTopic
+    ? BANK.questions.filter(q => q.topic === selectedTopic)
+    : BANK.questions;
+
+  // Pick the questions for this session using weighted random selection.
+  // Math.min ensures we never ask for more questions than the pool contains
+  // (e.g. if a topic only has 8 questions and the user selected 10).
+  quizQs     = weightedSample(pool, Math.min(selectedCount, pool.length));
+  currentIdx = 0;
+  sessionAns = [];
+
+  showScreen('quiz');
+  renderQuestion();
+}
+
+// Builds and displays the current question (quizQs[currentIdx]) in the DOM.
+function renderQuestion() {
+  const q     = quizQs[currentIdx];
+  const total = quizQs.length;
+
+  // Progress bar: fill it proportionally to how far through the quiz we are.
+  document.getElementById('quiz-pbar').style.width     = ((currentIdx / total) * 100) + '%';
+  document.getElementById('q-counter').textContent     = 'Question ' + (currentIdx + 1) + ' of ' + total;
+  document.getElementById('q-topic-badge').textContent = TOPIC_LABELS[q.topic] || q.topic;
+  document.getElementById('q-text').textContent        = q.text;
+
+  // Context box (hints / working notes) — hidden until after the user answers,
+  // so it doesn't give the answer away.
+  const ctxEl = document.getElementById('q-context');
+  ctxEl.style.display = 'none';
+  ctxEl.textContent   = q.context || '';
+
+  // Diagram image — only shown if this question has an associated image file.
+  // We use createElement instead of innerHTML so the image path is never
+  // interpreted as HTML, which would allow script injection if the path
+  // contained special characters.
+  const imgEl = document.getElementById('q-image');
+  imgEl.innerHTML     = '';
+  imgEl.style.display = q.image ? 'block' : 'none';
+  if (q.image) {
+    const img   = document.createElement('img');
+    img.src     = q.image;
+    img.alt     = 'Question diagram';
+    img.loading = 'lazy';
+    imgEl.appendChild(img);
+  }
+
+  // Build the answer option buttons dynamically from the question data.
+  // Each question's options object looks like: { a: "...", b: "...", c: "...", d: "..." }
+  const optionsEl = document.getElementById('q-options');
+  optionsEl.innerHTML = '';
+  for (const [letter, text] of Object.entries(q.options)) {
+    const btn   = document.createElement('button');
+    btn.className = 'opt';
+
+    // The bold letter label (A, B, C, D)
+    const span1 = document.createElement('span');
+    span1.className   = 'opt-letter';
+    span1.textContent = letter.toUpperCase();
+
+    // The answer text
+    const span2 = document.createElement('span');
+    span2.textContent = text;
+
+    btn.appendChild(span1);
+    btn.appendChild(span2);
+
+    // When clicked, pass the chosen letter and the question object to handleAnswer.
+    // We use an arrow function so the correct letter/q values are captured for each button.
+    btn.addEventListener('click', () => handleAnswer(letter, q));
+    optionsEl.appendChild(btn);
+  }
+
+  // Hide the feedback box and Next button until the user answers.
+  const fbEl   = document.getElementById('q-feedback');
+  const nextEl = document.getElementById('btn-next');
+  fbEl.style.display   = 'none';
+  fbEl.className       = 'feedback';
+  nextEl.style.display = 'none';
+}
+
+// Called when the user taps an answer option.
+// Records the result, updates the question history, and shows feedback.
+function handleAnswer(letter, q) {
+  const isCorrect = letter === q.answer;
+
+  // Create a history entry for this question if it's the first time it's been seen.
+  if (!progress[q.id]) progress[q.id] = { times_asked: 0, times_correct: 0 };
+  progress[q.id].times_asked++;
+  if (isCorrect) progress[q.id].times_correct++;
+  // Store today's date in ISO format (YYYY-MM-DD) as the last-asked date.
+  progress[q.id].last_asked = new Date().toISOString().slice(0, 10);
+  // Save immediately so progress isn't lost if the app is closed.
+  saveProgress();
+
+  // Add this answer to the session log for the end-screen summary.
+  sessionAns.push({ id: q.id, topic: q.topic, correct: isCorrect });
+
+  // Lock all option buttons and colour them to show correct / wrong / neutral.
+  document.querySelectorAll('.opt').forEach(el => {
+    el.disabled = true;
+    const elLetter = el.querySelector('.opt-letter').textContent.toLowerCase();
+    if (elLetter === q.answer) {
+      el.classList.add('opt-correct');       // Always highlight the right answer in green
+    } else if (elLetter === letter) {
+      el.classList.add('opt-wrong');         // The wrong choice the user picked — red
+    } else {
+      el.classList.add('opt-dim');           // Unchosen wrong options — faded out
+    }
+  });
+
+  // Reveal the context box now that the question has been answered.
+  const ctxEl = document.getElementById('q-context');
+  if (q.context) ctxEl.style.display = 'block';
+
+  // Build and show the feedback panel (correct/incorrect + explanation).
+  const fbEl = document.getElementById('q-feedback');
+  fbEl.style.display = 'block';
+  fbEl.className     = 'feedback ' + (isCorrect ? 'fb-correct' : 'fb-incorrect');
+
+  const verdict = document.createElement('div');
+  verdict.className   = 'verdict ' + (isCorrect ? 'v-correct' : 'v-incorrect');
+  verdict.textContent = isCorrect
+    ? '✓ Correct!'
+    : '✗ Incorrect — correct answer: ' + q.answer.toUpperCase() + '. ' + q.options[q.answer];
+
+  const expl = document.createElement('div');
+  expl.className   = 'expl';
+  expl.textContent = q.explanation;
+
+  // Clear any previous feedback content before inserting the new elements.
+  fbEl.innerHTML = '';
+  fbEl.appendChild(verdict);
+  fbEl.appendChild(expl);
+
+  // Show the Next button. On the last question it reads "See results" instead.
+  const nextEl         = document.getElementById('btn-next');
+  nextEl.style.display = 'block';
+  nextEl.textContent   = currentIdx === quizQs.length - 1 ? 'See results' : 'Next question →';
+}
+
+// Called when the user taps "Next question" or "See results".
+function nextQuestion() {
+  currentIdx++;
+  // If we've gone past the last question, show the results screen.
+  // Otherwise render the next question.
+  if (currentIdx >= quizQs.length) {
+    showEndScreen();
+  } else {
+    renderQuestion();
+  }
+}
+
+
+// ── End screen ────────────────────────────────────────────────────────────
+
+// Calculates the final score and builds the results screen.
+function showEndScreen() {
+  // Fill the progress bar to 100% to show the quiz is complete.
+  document.getElementById('quiz-pbar').style.width = '100%';
+
+  // Count correct answers and calculate the percentage.
+  const correct = sessionAns.filter(a => a.correct).length;
+  const total   = sessionAns.length;
+  const pct     = Math.round((correct / total) * 100);
+
+  // Pass mark comes from the question bank data (60% for the real capstone exam).
+  const pass    = pct >= BANK.pass_mark_percent;
+
+  document.getElementById('end-score').textContent = correct + '/' + total;
+  document.getElementById('end-pct').textContent   = pct + '%';
+
+  // Show a pass or fail badge.
+  const badge       = document.createElement('span');
+  badge.className   = 'pass-badge ' + (pass ? 'pass' : 'nopass');
+  badge.textContent = pass
+    ? 'PASS (' + BANK.pass_mark_percent + '% required)'
+    : 'NOT YET PASSING (' + BANK.pass_mark_percent + '% required)';
+  const badgeWrap   = document.getElementById('end-badge');
+  badgeWrap.innerHTML = '';
+  badgeWrap.appendChild(badge);
+
+  // Build a per-topic breakdown: group session answers by topic and count them.
+  const byTopic = {};
+  for (const a of sessionAns) {
+    if (!byTopic[a.topic]) byTopic[a.topic] = { correct: 0, total: 0 };
+    byTopic[a.topic].total++;
+    if (a.correct) byTopic[a.topic].correct++;
+  }
+
+  // Render one row per topic, coloured green (all correct), amber (partial), or red (all wrong).
+  const bdEl = document.getElementById('end-breakdown');
+  bdEl.innerHTML = '';
+  for (const [t, v] of Object.entries(byTopic)) {
+    const row   = document.createElement('div');
+    row.className = 'brow';
+
+    const label = document.createElement('span');
+    label.className   = 'brow-topic';
+    label.textContent = TOPIC_LABELS[t] || t;
+
+    const score = document.createElement('span');
+    score.className   = 'brow-score';
+    score.textContent = v.correct + '/' + v.total;
+    score.style.color = v.correct === v.total
+      ? 'var(--correct)'    // All correct — green
+      : v.correct === 0
+        ? 'var(--incorrect)' // All wrong — red
+        : 'var(--warn)';     // Mixed — amber
+
+    row.appendChild(label);
+    row.appendChild(score);
+    bdEl.appendChild(row);
+  }
+
+  showScreen('end');
+}
+
+
+// ── Home screen ───────────────────────────────────────────────────────────
+
+// Rebuilds the home screen stats and topic pills from current progress data.
+// Called on app load and any time the topic filter or progress changes.
+function renderHome() {
+  const allQ = BANK.questions;
+
+  // Find questions that have been attempted at least once.
+  const attempted = allQ.filter(q => progress[q.id] && progress[q.id].times_asked > 0);
+
+  // Sum up total attempts and correct answers across all attempted questions.
+  const totAsked = attempted.reduce((s, q) => s + progress[q.id].times_asked,   0);
+  const totRight = attempted.reduce((s, q) => s + progress[q.id].times_correct, 0);
+
+  // Overall accuracy — shown as a percentage on the home screen stat card.
+  const pct = totAsked > 0 ? Math.round((totRight / totAsked) * 100) : 0;
+
+  // Render the three stat cards (Seen / New / Correct %).
+  const statsEl = document.getElementById('home-stats');
+  statsEl.innerHTML = [
+    { val: attempted.length,              lbl: 'Seen'    },
+    { val: allQ.length - attempted.length, lbl: 'New'     },
+    { val: pct + '%',                     lbl: 'Correct' },
+  ].map(s =>
+    '<div class="stat"><div class="val">' + s.val + '</div><div class="lbl">' + s.lbl + '</div></div>'
+  ).join('');
+
+  // Build topic filter pills. new Set() de-duplicates the topic list,
+  // and sort() puts them in alphabetical order.
+  // We use createElement + addEventListener (instead of innerHTML with inline
+  // onclick attributes) so topic strings are never interpreted as HTML —
+  // this prevents any risk of script injection from unexpected topic names.
+  const topics  = [...new Set(allQ.map(q => q.topic))].sort();
+  const pillsEl = document.getElementById('topic-pills');
+  pillsEl.innerHTML = '';
+
+  // Helper that creates a single pill button and wires up its click handler.
+  function makePill(label, topic, isActive) {
+    const btn = document.createElement('button');
+    btn.className   = 'pill' + (isActive ? ' active' : '');
+    btn.textContent = label;
+    btn.addEventListener('click', () => selectTopic(topic));
+    return btn;
+  }
+
+  // "All" pill — passing null clears the topic filter.
+  pillsEl.appendChild(makePill('All (' + allQ.length + ')', null, !selectedTopic));
+
+  // One pill per topic.
+  for (const t of topics) {
+    const count = allQ.filter(q => q.topic === t).length;
+    pillsEl.appendChild(makePill((TOPIC_LABELS[t] || t) + ' (' + count + ')', t, selectedTopic === t));
+  }
+
+  // Show the date of the most recent quiz session.
+  // Object.values() gets all the history entries; we pull out the last_asked dates,
+  // remove blanks, sort them (ISO dates sort correctly as strings), and take the last one.
+  const dates = Object.values(progress).map(h => h.last_asked).filter(Boolean).sort();
+  document.getElementById('last-updated').textContent = dates.length ? dates[dates.length - 1] : 'never';
+}
+
+// Updates the active topic filter and re-renders the home screen.
+// topic is a string key like "legislation", or null for "all topics".
+function selectTopic(topic) {
+  selectedTopic = topic;
+  renderHome();
+}
+
+// Updates the question count selection and refreshes the pill highlights and button label.
+function selectCount(n) {
+  selectedCount = n;
+  // Toggle the 'active' class on each count pill to highlight the selected one.
+  document.querySelectorAll('#count-pills .pill').forEach(p => {
+    p.classList.toggle('active', parseInt(p.textContent) === n);
+  });
+  document.getElementById('btn-start').textContent = 'Start Quiz — ' + n + ' questions';
+}
+
+// Refreshes the home screen data and switches to it.
+function showHome() {
+  renderHome();
+  showScreen('home');
+}
+
+// Switches between the home, quiz, and end screens.
+// Only one screen is visible at a time — the others have display:none via CSS.
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  // Scroll back to the top whenever the screen changes.
+  window.scrollTo(0, 0);
+}
+
+
+// ── Boot ──────────────────────────────────────────────────────────────────
+
+// Shows the error screen with a message and a link back to the quiz browser.
+function showError(msg) {
+  document.getElementById('error-msg').textContent = msg;
+  showScreen('error');
+}
+
+// Finds a quiz entry in the catalog tree (industries → categories → quizzes).
+function findQuiz(catalog, id) {
+  for (const ind of catalog.industries || []) {
+    for (const cat of ind.categories || []) {
+      for (const qz of cat.quizzes || []) {
+        if (qz.id === id) return qz;
+      }
+    }
+  }
+  return null;
+}
+
+// Loads the quiz named in the ?quiz= URL parameter, wires up the headers, then
+// shows the home screen. Runs once on page load.
+async function init() {
+  quizId = new URLSearchParams(location.search).get('quiz');
+  if (!quizId) { showError('No quiz selected. Open a quiz from the home screen.'); return; }
+
+  try {
+    const catalog = await fetch('catalog.json').then(r => r.json());
+    const entry   = findQuiz(catalog, quizId);
+    if (!entry) { showError('Quiz not found.'); return; }
+    BANK = await fetch(entry.file).then(r => r.json());
+  } catch (_) {
+    showError('Could not load this quiz. Check your connection and try again.');
+    return;
+  }
+
+  // Topic labels travel with the bank, so the engine works for any subject.
+  TOPIC_LABELS = BANK.topic_labels || {};
+
+  // Fill the quiz title into both header bars and the browser tab.
+  document.title = BANK.title || 'Quiz';
+  document.getElementById('quiz-title').textContent = BANK.title || 'Quiz';
+  document.getElementById('end-title').textContent  = BANK.title || 'Quiz';
+  document.getElementById('quiz-sub').textContent   = BANK.source || '';
+
+  loadProgress();
+  renderHome();
+
+  // A placeholder quiz with no questions yet: keep the start button visible
+  // but disabled, so it's clear the quiz exists but isn't ready.
+  if (!BANK.questions.length) {
+    const btn = document.getElementById('btn-start');
+    btn.disabled = true;
+    btn.style.opacity = '0.5';
+    btn.textContent = 'No questions yet';
+  }
+
+  showScreen('home');
+}
+
+// Register the service worker (offline support) only if the browser supports
+// it (all modern browsers do), then load the quiz.
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+init();
+</script>
+</body>
+</html>

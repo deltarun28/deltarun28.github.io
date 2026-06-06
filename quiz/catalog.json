@@ -1,0 +1,43 @@
+{
+  "industries": [
+    {
+      "id": "electrical",
+      "title": "Electrical",
+      "icon": "⚡",
+      "categories": [
+        {
+          "id": "electrician",
+          "title": "Electrician",
+          "quizzes": [
+            {
+              "id": "elec-electrician-capstone-yr1",
+              "title": "Year 1 Capstone",
+              "file": "banks/elec-electrician-capstone-yr1.json",
+              "meta": "US 32619 · 92 questions"
+            }
+          ]
+        },
+        { "id": "lineman", "title": "Lineman", "quizzes": [] },
+        { "id": "cable-jointer", "title": "Cable Jointer", "quizzes": [] }
+      ]
+    },
+    {
+      "id": "shooting",
+      "title": "Shooting",
+      "icon": "🎯",
+      "categories": [
+        { "id": "marksmanship", "title": "Marksmanship", "quizzes": [] },
+        { "id": "marksmanship-advanced", "title": "Marksmanship Advanced", "quizzes": [] },
+        {
+          "id": "cartridges",
+          "title": "Cartridges",
+          "quizzes": [
+            { "id": "shooting-cartridge-308", "title": ".308 Winchester", "file": "banks/shooting-cartridge-308.json", "meta": "Coming soon" },
+            { "id": "shooting-cartridge-243", "title": ".243 Winchester", "file": "banks/shooting-cartridge-243.json", "meta": "Coming soon" },
+            { "id": "shooting-cartridge-65creedmoor", "title": "6.5 Creedmoor", "file": "banks/shooting-cartridge-65creedmoor.json", "meta": "Coming soon" }
+          ]
+        }
+      ]
+    }
+  ]
+}
