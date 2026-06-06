@@ -1,0 +1,1344 @@
+{
+  "id": "shooting-ballistic-judgement",
+  "title": "Ballistic Judgement",
+  "source": "Environmental & ballistic judgement calls",
+  "pass_mark_percent": 70,
+  "topic_labels": {
+    "trajectory_direction": "Trajectory Direction",
+    "altitude": "Altitude",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "pressure": "Pressure",
+    "shooting_angle": "Shooting Angle",
+    "wind_priority": "Wind Priority",
+    "spin_drift": "Spin Drift",
+    "crosswind_jump": "Crosswind & Jump",
+    "sight_height": "Sight Height",
+    "combined_effects": "Combined Effects"
+  },
+  "questions": [
+    {
+      "id": "ball-001",
+      "number": 1,
+      "topic": "trajectory_direction",
+      "text": "You zero at sea level and hunt at 500m elevation. Will impacts generally be high or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "a",
+      "explanation": "Higher altitude means less drag and less drop."
+    },
+    {
+      "id": "ball-002",
+      "number": 2,
+      "topic": "trajectory_direction",
+      "text": "You zero at 1000m elevation and hunt at sea level. High or low?",
+      "options": {
+        "a": "Low",
+        "b": "High"
+      },
+      "answer": "a",
+      "explanation": "Denser air increases drag."
+    },
+    {
+      "id": "ball-003",
+      "number": 3,
+      "topic": "trajectory_direction",
+      "text": "You develop dope at 15°C and shoot at 25°C. High or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "a",
+      "explanation": "Warmer air is less dense."
+    },
+    {
+      "id": "ball-004",
+      "number": 4,
+      "topic": "trajectory_direction",
+      "text": "You develop dope at 15°C and shoot at 5°C. High or low?",
+      "options": {
+        "a": "Low",
+        "b": "High"
+      },
+      "answer": "a",
+      "explanation": "Colder air is denser."
+    },
+    {
+      "id": "ball-005",
+      "number": 5,
+      "topic": "trajectory_direction",
+      "text": "Humidity increases significantly. High or low?",
+      "options": {
+        "a": "Low",
+        "b": "High"
+      },
+      "answer": "b",
+      "explanation": "Humid air is slightly less dense."
+    },
+    {
+      "id": "ball-006",
+      "number": 6,
+      "topic": "trajectory_direction",
+      "text": "Pressure drops significantly. High or low?",
+      "options": {
+        "a": "Low",
+        "b": "High"
+      },
+      "answer": "b",
+      "explanation": "Lower pressure reduces drag."
+    },
+    {
+      "id": "ball-007",
+      "number": 7,
+      "topic": "trajectory_direction",
+      "text": "Pressure rises significantly. High or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "b",
+      "explanation": "Higher pressure increases drag."
+    },
+    {
+      "id": "ball-008",
+      "number": 8,
+      "topic": "trajectory_direction",
+      "text": "Steep uphill shot using line-of-sight range. High or low?",
+      "options": {
+        "a": "Low",
+        "b": "High"
+      },
+      "answer": "b",
+      "explanation": "Too much elevation is applied."
+    },
+    {
+      "id": "ball-009",
+      "number": 9,
+      "topic": "trajectory_direction",
+      "text": "Steep downhill shot using line-of-sight range. High or low?",
+      "options": {
+        "a": "Low",
+        "b": "High"
+      },
+      "answer": "b",
+      "explanation": "Angle compensation is required."
+    },
+    {
+      "id": "ball-010",
+      "number": 10,
+      "topic": "trajectory_direction",
+      "text": "Right-hand crosswind. Which direction does drift occur?",
+      "options": {
+        "a": "Right",
+        "b": "Left"
+      },
+      "answer": "a",
+      "explanation": "Wind pushes the bullet in its direction."
+    },
+    {
+      "id": "ball-011",
+      "number": 11,
+      "topic": "altitude",
+      "text": "Which has the larger effect: sea level to 500m, or 500m to 1000m elevation gain?",
+      "options": {
+        "a": "500m to 1000m",
+        "b": "Sea level to 500m"
+      },
+      "answer": "b",
+      "explanation": "Density changes are greatest lower in the atmosphere."
+    },
+    {
+      "id": "ball-012",
+      "number": 12,
+      "topic": "altitude",
+      "text": "Which affects trajectory more: a 500m altitude gain or a 10°C temperature change?",
+      "options": {
+        "a": "500m altitude gain",
+        "b": "10°C temperature change"
+      },
+      "answer": "a",
+      "explanation": "Typically larger."
+    },
+    {
+      "id": "ball-013",
+      "number": 13,
+      "topic": "altitude",
+      "text": "At 800m, does altitude matter more than at 200m?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Effects accumulate."
+    },
+    {
+      "id": "ball-014",
+      "number": 14,
+      "topic": "altitude",
+      "text": "Which matters more: sea level to 1500m, or 1500m to 3000m?",
+      "options": {
+        "a": "1500m to 3000m",
+        "b": "Sea level to 1500m"
+      },
+      "answer": "b",
+      "explanation": "Non-linear relationship."
+    },
+    {
+      "id": "ball-015",
+      "number": 15,
+      "topic": "altitude",
+      "text": "Would altitude changes matter more for a 300m shot or an 800m shot?",
+      "options": {
+        "a": "800m",
+        "b": "300m"
+      },
+      "answer": "a",
+      "explanation": "Longer flight time."
+    },
+    {
+      "id": "ball-016",
+      "number": 16,
+      "topic": "altitude",
+      "text": "Do higher elevations require more or less elevation correction?",
+      "options": {
+        "a": "Less",
+        "b": "More"
+      },
+      "answer": "a",
+      "explanation": "Bullets drop less."
+    },
+    {
+      "id": "ball-017",
+      "number": 17,
+      "topic": "altitude",
+      "text": "Can altitude changes affect zero confirmation?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Trajectory shifts."
+    },
+    {
+      "id": "ball-018",
+      "number": 18,
+      "topic": "altitude",
+      "text": "Would hunters notice altitude effects sooner than humidity effects?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Altitude is larger."
+    },
+    {
+      "id": "ball-019",
+      "number": 19,
+      "topic": "altitude",
+      "text": "Which has more effect: 0m to 1000m or 1000m to 2000m?",
+      "options": {
+        "a": "1000m to 2000m",
+        "b": "0m to 1000m"
+      },
+      "answer": "b",
+      "explanation": "Greater density change."
+    },
+    {
+      "id": "ball-020",
+      "number": 20,
+      "topic": "altitude",
+      "text": "At hunting ranges, is altitude secondary to wind?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Wind usually dominates."
+    },
+    {
+      "id": "ball-021",
+      "number": 21,
+      "topic": "temperature",
+      "text": "Which has more effect: 15°C to 25°C or 15°C to 5°C?",
+      "options": {
+        "a": "15°C to 5°C",
+        "b": "15°C to 25°C",
+        "c": "Approximately equal"
+      },
+      "answer": "c",
+      "explanation": "Both are 10°C changes."
+    },
+    {
+      "id": "ball-022",
+      "number": 22,
+      "topic": "temperature",
+      "text": "Does temperature matter more at 800m than 200m?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Effects increase with distance."
+    },
+    {
+      "id": "ball-023",
+      "number": 23,
+      "topic": "temperature",
+      "text": "Which generally has more effect: 20°C change or humidity from 20% to 90%?",
+      "options": {
+        "a": "Humidity 20% to 90%",
+        "b": "20°C change"
+      },
+      "answer": "b",
+      "explanation": "Temperature dominates."
+    },
+    {
+      "id": "ball-024",
+      "number": 24,
+      "topic": "temperature",
+      "text": "Would a winter dope card perfectly match summer conditions?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a",
+      "explanation": "Temperature affects trajectory."
+    },
+    {
+      "id": "ball-025",
+      "number": 25,
+      "topic": "temperature",
+      "text": "Can powder temperature affect muzzle velocity?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Many loads are temperature sensitive."
+    },
+    {
+      "id": "ball-026",
+      "number": 26,
+      "topic": "temperature",
+      "text": "Which is likely larger: 5°C change or 25°C change?",
+      "options": {
+        "a": "25°C change",
+        "b": "5°C change"
+      },
+      "answer": "a",
+      "explanation": "Greater environmental change."
+    },
+    {
+      "id": "ball-027",
+      "number": 27,
+      "topic": "temperature",
+      "text": "At long range, is temperature a first-order effect?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Can materially affect trajectory."
+    },
+    {
+      "id": "ball-028",
+      "number": 28,
+      "topic": "temperature",
+      "text": "Do warmer conditions generally reduce drag?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Lower density."
+    },
+    {
+      "id": "ball-029",
+      "number": 29,
+      "topic": "temperature",
+      "text": "Do colder conditions generally increase drag?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Higher density."
+    },
+    {
+      "id": "ball-030",
+      "number": 30,
+      "topic": "temperature",
+      "text": "Would you verify temperature before humidity?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Usually more important."
+    },
+    {
+      "id": "ball-031",
+      "number": 31,
+      "topic": "humidity",
+      "text": "Does humidity have a larger effect at 0°C or 25°C?",
+      "options": {
+        "a": "0°C",
+        "b": "25°C"
+      },
+      "answer": "b",
+      "explanation": "Warm air holds more moisture."
+    },
+    {
+      "id": "ball-032",
+      "number": 32,
+      "topic": "humidity",
+      "text": "Which matters more: humidity or wind?",
+      "options": {
+        "a": "Wind",
+        "b": "Humidity"
+      },
+      "answer": "a",
+      "explanation": "By a large margin."
+    },
+    {
+      "id": "ball-033",
+      "number": 33,
+      "topic": "humidity",
+      "text": "Which matters more: humidity or altitude?",
+      "options": {
+        "a": "Altitude",
+        "b": "Humidity"
+      },
+      "answer": "a",
+      "explanation": "Much stronger effect."
+    },
+    {
+      "id": "ball-034",
+      "number": 34,
+      "topic": "humidity",
+      "text": "Humid air is denser than dry air. True or false?",
+      "options": {
+        "a": "False",
+        "b": "True"
+      },
+      "answer": "a",
+      "explanation": "Humid air is less dense."
+    },
+    {
+      "id": "ball-035",
+      "number": 35,
+      "topic": "humidity",
+      "text": "Does humidity generally make impacts higher or lower?",
+      "options": {
+        "a": "Higher",
+        "b": "Lower"
+      },
+      "answer": "a",
+      "explanation": "Slightly less drag."
+    },
+    {
+      "id": "ball-036",
+      "number": 36,
+      "topic": "humidity",
+      "text": "Is humidity a primary or secondary factor?",
+      "options": {
+        "a": "Secondary",
+        "b": "Primary"
+      },
+      "answer": "a",
+      "explanation": "Usually small."
+    },
+    {
+      "id": "ball-037",
+      "number": 37,
+      "topic": "humidity",
+      "text": "Would a 10°C temperature change outweigh a humidity change from 20% to 90%?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Temperature dominates."
+    },
+    {
+      "id": "ball-038",
+      "number": 38,
+      "topic": "humidity",
+      "text": "Would most hunters notice humidity changes without instruments?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a",
+      "explanation": "Subtle effect."
+    },
+    {
+      "id": "ball-039",
+      "number": 39,
+      "topic": "humidity",
+      "text": "At 300m, should humidity be a major concern?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a",
+      "explanation": "Other factors matter more."
+    },
+    {
+      "id": "ball-040",
+      "number": 40,
+      "topic": "humidity",
+      "text": "Should humidity be ignored completely?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b",
+      "explanation": "Small but real."
+    },
+    {
+      "id": "ball-041",
+      "number": 41,
+      "topic": "pressure",
+      "text": "Pressure drops. High or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "a",
+      "explanation": "Lower density."
+    },
+    {
+      "id": "ball-042",
+      "number": 42,
+      "topic": "pressure",
+      "text": "Pressure rises. High or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "b",
+      "explanation": "Higher density."
+    },
+    {
+      "id": "ball-043",
+      "number": 43,
+      "topic": "pressure",
+      "text": "Which matters more: pressure or humidity?",
+      "options": {
+        "a": "Pressure",
+        "b": "Humidity"
+      },
+      "answer": "a",
+      "explanation": "Usually larger."
+    },
+    {
+      "id": "ball-044",
+      "number": 44,
+      "topic": "pressure",
+      "text": "Does pressure matter more at 800m than 200m?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Effects accumulate."
+    },
+    {
+      "id": "ball-045",
+      "number": 45,
+      "topic": "pressure",
+      "text": "Can pressure changes affect long-range dope?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Trajectory shifts."
+    },
+    {
+      "id": "ball-046",
+      "number": 46,
+      "topic": "pressure",
+      "text": "Lower pressure requires more or less elevation correction?",
+      "options": {
+        "a": "More",
+        "b": "Less"
+      },
+      "answer": "b",
+      "explanation": "Less drop."
+    },
+    {
+      "id": "ball-047",
+      "number": 47,
+      "topic": "pressure",
+      "text": "Higher pressure requires more or less elevation correction?",
+      "options": {
+        "a": "Less",
+        "b": "More"
+      },
+      "answer": "b",
+      "explanation": "More drop."
+    },
+    {
+      "id": "ball-048",
+      "number": 48,
+      "topic": "pressure",
+      "text": "Is pressure a primary factor at long range?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Important input."
+    },
+    {
+      "id": "ball-049",
+      "number": 49,
+      "topic": "pressure",
+      "text": "Would you check pressure before humidity?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Greater influence."
+    },
+    {
+      "id": "ball-050",
+      "number": 50,
+      "topic": "pressure",
+      "text": "Does weather-system pressure change matter?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Especially long range."
+    },
+    {
+      "id": "ball-051",
+      "number": 51,
+      "topic": "shooting_angle",
+      "text": "Steep uphill shots require more or less elevation correction?",
+      "options": {
+        "a": "More",
+        "b": "Less"
+      },
+      "answer": "b",
+      "explanation": "Horizontal distance is shorter."
+    },
+    {
+      "id": "ball-052",
+      "number": 52,
+      "topic": "shooting_angle",
+      "text": "Steep downhill shots require more or less elevation correction?",
+      "options": {
+        "a": "More",
+        "b": "Less"
+      },
+      "answer": "b",
+      "explanation": "Same principle."
+    },
+    {
+      "id": "ball-053",
+      "number": 53,
+      "topic": "shooting_angle",
+      "text": "Does angle matter more at 800m than 200m?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Error increases."
+    },
+    {
+      "id": "ball-054",
+      "number": 54,
+      "topic": "shooting_angle",
+      "text": "Does a 10° shot angle matter less than a 45° angle?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Steeper angles have larger effects."
+    },
+    {
+      "id": "ball-055",
+      "number": 55,
+      "topic": "shooting_angle",
+      "text": "Can uphill and downhill shots both impact high if uncompensated?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Both need less correction."
+    },
+    {
+      "id": "ball-056",
+      "number": 56,
+      "topic": "shooting_angle",
+      "text": "Would angle matter much on flat farmland?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a",
+      "explanation": "Angles are small."
+    },
+    {
+      "id": "ball-057",
+      "number": 57,
+      "topic": "shooting_angle",
+      "text": "Would angle matter in alpine hunting?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Steep terrain."
+    },
+    {
+      "id": "ball-058",
+      "number": 58,
+      "topic": "shooting_angle",
+      "text": "Is line-of-sight range always the correct range to dial?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b",
+      "explanation": "Horizontal distance matters."
+    },
+    {
+      "id": "ball-059",
+      "number": 59,
+      "topic": "shooting_angle",
+      "text": "Does angle compensation increase hit probability?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Reduces elevation error."
+    },
+    {
+      "id": "ball-060",
+      "number": 60,
+      "topic": "shooting_angle",
+      "text": "Is angle usually a larger concern than humidity?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Often larger."
+    },
+    {
+      "id": "ball-061",
+      "number": 61,
+      "topic": "wind_priority",
+      "text": "At 600m, which matters more: wind or humidity?",
+      "options": {
+        "a": "Humidity",
+        "b": "Wind"
+      },
+      "answer": "b",
+      "explanation": "Largest source of error."
+    },
+    {
+      "id": "ball-062",
+      "number": 62,
+      "topic": "wind_priority",
+      "text": "At 600m, which matters more: wind or sight height?",
+      "options": {
+        "a": "Wind",
+        "b": "Sight height"
+      },
+      "answer": "a",
+      "explanation": "By a wide margin."
+    },
+    {
+      "id": "ball-063",
+      "number": 63,
+      "topic": "wind_priority",
+      "text": "Which is more likely to cause a miss: 5 km/h wind error or humidity change?",
+      "options": {
+        "a": "5 km/h wind error",
+        "b": "Humidity change"
+      },
+      "answer": "a",
+      "explanation": "Wind dominates."
+    },
+    {
+      "id": "ball-064",
+      "number": 64,
+      "topic": "wind_priority",
+      "text": "Which deserves attention first at 700m: wind or spin drift?",
+      "options": {
+        "a": "Spin drift",
+        "b": "Wind"
+      },
+      "answer": "b",
+      "explanation": "Usually much larger."
+    },
+    {
+      "id": "ball-065",
+      "number": 65,
+      "topic": "wind_priority",
+      "text": "Which deserves attention first: wind or pressure?",
+      "options": {
+        "a": "Pressure",
+        "b": "Wind"
+      },
+      "answer": "b",
+      "explanation": "Generally larger."
+    },
+    {
+      "id": "ball-066",
+      "number": 66,
+      "topic": "wind_priority",
+      "text": "Can perfect dope still miss if wind is wrong?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Wind often dominates."
+    },
+    {
+      "id": "ball-067",
+      "number": 67,
+      "topic": "wind_priority",
+      "text": "At hunting ranges, is wind usually the biggest challenge?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Especially beyond 300m."
+    },
+    {
+      "id": "ball-068",
+      "number": 68,
+      "topic": "wind_priority",
+      "text": "Would a 0.2 mrad wind error matter?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Can exceed margins."
+    },
+    {
+      "id": "ball-069",
+      "number": 69,
+      "topic": "wind_priority",
+      "text": "Should wind estimation be practiced heavily?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Critical skill."
+    },
+    {
+      "id": "ball-070",
+      "number": 70,
+      "topic": "wind_priority",
+      "text": "Would most misses be caused by humidity or wind?",
+      "options": {
+        "a": "Humidity",
+        "b": "Wind"
+      },
+      "answer": "b",
+      "explanation": "Most often."
+    },
+    {
+      "id": "ball-071",
+      "number": 71,
+      "topic": "spin_drift",
+      "text": "Right-hand twist barrels drift which direction?",
+      "options": {
+        "a": "Right",
+        "b": "Left"
+      },
+      "answer": "a",
+      "explanation": "Spin drift."
+    },
+    {
+      "id": "ball-072",
+      "number": 72,
+      "topic": "spin_drift",
+      "text": "Does spin drift increase with distance?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Accumulates."
+    },
+    {
+      "id": "ball-073",
+      "number": 73,
+      "topic": "spin_drift",
+      "text": "Does spin drift matter more at 1000m than 300m?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Distance dependent."
+    },
+    {
+      "id": "ball-074",
+      "number": 74,
+      "topic": "spin_drift",
+      "text": "Which is larger at 500m: spin drift or moderate wind error?",
+      "options": {
+        "a": "Spin drift",
+        "b": "Wind error"
+      },
+      "answer": "b",
+      "explanation": "Usually larger."
+    },
+    {
+      "id": "ball-075",
+      "number": 75,
+      "topic": "spin_drift",
+      "text": "Can spin drift be predicted?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Consistent effect."
+    },
+    {
+      "id": "ball-076",
+      "number": 76,
+      "topic": "spin_drift",
+      "text": "Should hunters worry more about wind or spin drift?",
+      "options": {
+        "a": "Spin drift",
+        "b": "Wind"
+      },
+      "answer": "b",
+      "explanation": "Higher impact."
+    },
+    {
+      "id": "ball-077",
+      "number": 77,
+      "topic": "spin_drift",
+      "text": "Is spin drift vertical or horizontal?",
+      "options": {
+        "a": "Horizontal",
+        "b": "Vertical"
+      },
+      "answer": "a",
+      "explanation": "Predominantly."
+    },
+    {
+      "id": "ball-078",
+      "number": 78,
+      "topic": "spin_drift",
+      "text": "Does barrel twist direction affect drift direction?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Determines direction."
+    },
+    {
+      "id": "ball-079",
+      "number": 79,
+      "topic": "spin_drift",
+      "text": "Is spin drift a first-order effect?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b",
+      "explanation": "Usually secondary."
+    },
+    {
+      "id": "ball-080",
+      "number": 80,
+      "topic": "spin_drift",
+      "text": "Can spin drift matter at long range?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Especially extended range."
+    },
+    {
+      "id": "ball-081",
+      "number": 81,
+      "topic": "crosswind_jump",
+      "text": "Can crosswinds cause vertical effects?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Aerodynamic jump."
+    },
+    {
+      "id": "ball-082",
+      "number": 82,
+      "topic": "crosswind_jump",
+      "text": "Is aerodynamic jump larger than wind drift?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a",
+      "explanation": "Much smaller."
+    },
+    {
+      "id": "ball-083",
+      "number": 83,
+      "topic": "crosswind_jump",
+      "text": "Should wind drift be prioritised over aerodynamic jump?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Far greater effect."
+    },
+    {
+      "id": "ball-084",
+      "number": 84,
+      "topic": "crosswind_jump",
+      "text": "Is aerodynamic jump real?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Well documented."
+    },
+    {
+      "id": "ball-085",
+      "number": 85,
+      "topic": "crosswind_jump",
+      "text": "Does jump become more noticeable at longer range?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Still secondary."
+    },
+    {
+      "id": "ball-086",
+      "number": 86,
+      "topic": "crosswind_jump",
+      "text": "Can crosswind create both horizontal and vertical movement?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Two effects."
+    },
+    {
+      "id": "ball-087",
+      "number": 87,
+      "topic": "crosswind_jump",
+      "text": "Would most hunters notice wind drift before jump?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Drift dominates."
+    },
+    {
+      "id": "ball-088",
+      "number": 88,
+      "topic": "crosswind_jump",
+      "text": "Is jump a primary or secondary effect?",
+      "options": {
+        "a": "Secondary",
+        "b": "Primary"
+      },
+      "answer": "a",
+      "explanation": "Smaller influence."
+    },
+    {
+      "id": "ball-089",
+      "number": 89,
+      "topic": "crosswind_jump",
+      "text": "Can ballistic solvers model jump?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Many do."
+    },
+    {
+      "id": "ball-090",
+      "number": 90,
+      "topic": "crosswind_jump",
+      "text": "Should jump be ignored entirely?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b",
+      "explanation": "But prioritise larger factors."
+    },
+    {
+      "id": "ball-091",
+      "number": 91,
+      "topic": "sight_height",
+      "text": "Does sight height matter more at 20m or 300m?",
+      "options": {
+        "a": "300m",
+        "b": "20m"
+      },
+      "answer": "b",
+      "explanation": "Greatest effect close range."
+    },
+    {
+      "id": "ball-092",
+      "number": 92,
+      "topic": "sight_height",
+      "text": "Can sight height cause low impacts at close range?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Bullet starts below sight line."
+    },
+    {
+      "id": "ball-093",
+      "number": 93,
+      "topic": "sight_height",
+      "text": "Does sight height matter much at 500m?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "b",
+      "explanation": "Minimal influence."
+    },
+    {
+      "id": "ball-094",
+      "number": 94,
+      "topic": "sight_height",
+      "text": "Would a rabbit at 20m be more affected than a deer at 300m?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Close range magnifies effect."
+    },
+    {
+      "id": "ball-095",
+      "number": 95,
+      "topic": "sight_height",
+      "text": "Do taller scope mounts increase close-range offset?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Greater separation."
+    },
+    {
+      "id": "ball-096",
+      "number": 96,
+      "topic": "sight_height",
+      "text": "Should close-range holds consider sight height?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Important on small targets."
+    },
+    {
+      "id": "ball-097",
+      "number": 97,
+      "topic": "sight_height",
+      "text": "Is sight height a primary long-range factor?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "a",
+      "explanation": "Mostly close-range."
+    },
+    {
+      "id": "ball-098",
+      "number": 98,
+      "topic": "sight_height",
+      "text": "Can sight height cause a miss on small targets?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Especially close."
+    },
+    {
+      "id": "ball-099",
+      "number": 99,
+      "topic": "sight_height",
+      "text": "Would you prioritise wind or sight height at 600m?",
+      "options": {
+        "a": "Wind",
+        "b": "Sight height"
+      },
+      "answer": "a",
+      "explanation": "Much larger effect."
+    },
+    {
+      "id": "ball-100",
+      "number": 100,
+      "topic": "sight_height",
+      "text": "Does zero distance interact with sight height?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "Trajectory crossover changes."
+    },
+    {
+      "id": "ball-101",
+      "number": 101,
+      "topic": "combined_effects",
+      "text": "Dope built at sea level/15°C. Hunting at 1000m/25°C. High or low?",
+      "options": {
+        "a": "Low",
+        "b": "High"
+      },
+      "answer": "b",
+      "explanation": "Both changes reduce drag."
+    },
+    {
+      "id": "ball-102",
+      "number": 102,
+      "topic": "combined_effects",
+      "text": "Dope built at 1000m/25°C. Hunting at sea level/5°C. High or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "b",
+      "explanation": "Both increase drag."
+    },
+    {
+      "id": "ball-103",
+      "number": 103,
+      "topic": "combined_effects",
+      "text": "Altitude increases while temperature decreases. Do effects oppose each other?",
+      "options": {
+        "a": "Yes",
+        "b": "No"
+      },
+      "answer": "a",
+      "explanation": "One raises impacts, one lowers."
+    },
+    {
+      "id": "ball-104",
+      "number": 104,
+      "topic": "combined_effects",
+      "text": "Higher altitude and lower pressure. High or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "a",
+      "explanation": "Both reduce density."
+    },
+    {
+      "id": "ball-105",
+      "number": 105,
+      "topic": "combined_effects",
+      "text": "Lower altitude and higher pressure. High or low?",
+      "options": {
+        "a": "High",
+        "b": "Low"
+      },
+      "answer": "b",
+      "explanation": "Both increase density."
+    },
+    {
+      "id": "ball-106",
+      "number": 106,
+      "topic": "combined_effects",
+      "text": "Warm humid day versus cold dry day. Which generally shoots higher?",
+      "options": {
+        "a": "Warm humid day",
+        "b": "Cold dry day"
+      },
+      "answer": "a",
+      "explanation": "Less dense air."
+    },
+    {
+      "id": "ball-107",
+      "number": 107,
+      "topic": "combined_effects",
+      "text": "Which usually matters most: wind, altitude, humidity?",
+      "options": {
+        "a": "Altitude",
+        "b": "Humidity",
+        "c": "Wind"
+      },
+      "answer": "c",
+      "explanation": "Dominant factor."
+    },
+    {
+      "id": "ball-108",
+      "number": 108,
+      "topic": "combined_effects",
+      "text": "Which usually matters most: wind, temperature, sight height at 600m?",
+      "options": {
+        "a": "Temperature",
+        "b": "Sight height",
+        "c": "Wind"
+      },
+      "answer": "c",
+      "explanation": "Largest contributor."
+    },
+    {
+      "id": "ball-109",
+      "number": 109,
+      "topic": "combined_effects",
+      "text": "Can several small effects combine into a meaningful shift?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Effects add up."
+    },
+    {
+      "id": "ball-110",
+      "number": 110,
+      "topic": "combined_effects",
+      "text": "Should environmental factors be considered together rather than individually?",
+      "options": {
+        "a": "No",
+        "b": "Yes"
+      },
+      "answer": "b",
+      "explanation": "Total air density matters."
+    }
+  ]
+}
