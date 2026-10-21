@@ -19,11 +19,17 @@
 // Bump the CACHE string below if you ever need to force-clear every cached
 // file at once (e.g. a breaking change to asset filenames). Day-to-day content
 // updates do NOT need a bump thanks to the network-first strategy above.
-const CACHE = 'electrical-quiz-v7';
+// CacheStorage is shared across the whole deltarun28.github.io origin, so every
+// game and quiz on the site sees the same cache list. The activate handler must
+// only delete caches carrying this app's prefix, or it wipes out the others.
+const CACHE_PREFIX = 'electrical-quiz-';
+const CACHE = `${CACHE_PREFIX}v8`;
 
 // Files cached up front when the service worker first installs, so the app
 // works offline immediately after the first visit.
 const INSTALL_FILES = [
+  // The directory URL (/quiz/) is what GitHub Pages serves as index.html.
+  './',
   './home.html',
   './index.html',
   './manifest.json',
@@ -37,6 +43,18 @@ const INSTALL_FILES = [
   './icon.svg',
   './icon-192.png',
   './icon-512.png',
+  // Images referenced by the question banks. The static test fails if a bank
+  // uses an image that is not listed here.
+  './images/set-a-022.png',
+  './images/set-a-023.png',
+  './images/set-a-024.png',
+  './images/set-a-025.png',
+  './images/set-a-032.png',
+  './images/set-b-032.png',
+  './images/set-b-039.png',
+  './images/set-b-042.png',
+  './images/set-b-051.png',
+  './images/set-b-062.png',
 ];
 
 // Requests matching these get the network-first treatment (fresh when online,
@@ -58,7 +76,9 @@ function isFreshContent(request) {
 // triggering an update). We pre-populate the cache so the app works offline.
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(INSTALL_FILES))
+    // cache: 'reload' bypasses the browser's HTTP cache, so a copy stored there
+    // cannot be saved into this version as if it were the new one.
+    caches.open(CACHE).then(c => c.addAll(INSTALL_FILES.map(url => new Request(url, { cache: 'reload' }))))
   );
   // skipWaiting() makes this new service worker take over immediately instead
   // of waiting for existing tabs to close first.
@@ -67,12 +87,12 @@ self.addEventListener('install', e => {
 
 
 // ── Activate ──────────────────────────────────────────────────────────────
-// Fires after install, once the worker is in control. We delete caches from
-// older versions so stale files don't pile up.
+// Fires after install, once the worker is in control. We delete this app's
+// older caches so stale files don't pile up. Other apps' caches are left alone.
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k.startsWith(CACHE_PREFIX) && k !== CACHE).map(k => caches.delete(k)))
     )
   );
   // clients.claim() takes control of open pages right away, no reload needed.
